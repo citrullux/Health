@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.inNum = new System.Windows.Forms.NumericUpDown();
+            this.inLift = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.inTime = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
-            this.inEx = new System.Windows.Forms.NumericUpDown();
+            this.inExcursion = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.inJump = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@
             this.inDyn = new System.Windows.Forms.NumericUpDown();
             this.inFlex = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
-            this.inVol = new System.Windows.Forms.NumericUpDown();
+            this.inVolume = new System.Windows.Forms.NumericUpDown();
             this.inWeight = new System.Windows.Forms.NumericUpDown();
             this.inHeight = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,11 +54,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.inReturn = new System.Windows.Forms.NumericUpDown();
+            this.inHbfreturn = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.inLoad = new System.Windows.Forms.NumericUpDown();
+            this.inHbfload = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.inStill = new System.Windows.Forms.NumericUpDown();
+            this.inHbfidle = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.inWoman = new System.Windows.Forms.RadioButton();
             this.inMan = new System.Windows.Forms.RadioButton();
@@ -71,71 +71,71 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.outSumm = new System.Windows.Forms.TextBox();
+            this.outDynm = new System.Windows.Forms.TextBox();
+            this.outJump = new System.Windows.Forms.TextBox();
+            this.outEcxs = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.outFlex = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.outEcon = new System.Windows.Forms.TextBox();
+            this.outSTR = new System.Windows.Forms.TextBox();
+            this.outHBF = new System.Windows.Forms.TextBox();
+            this.outType = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.GroopBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.outFunc = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.outSkir = new System.Windows.Forms.TextBox();
+            this.outShap = new System.Windows.Forms.TextBox();
+            this.outRoof = new System.Windows.Forms.TextBox();
+            this.outKerd = new System.Windows.Forms.TextBox();
+            this.outPinj = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCalc = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.outEnded = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inLift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inEx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inExcursion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inJump)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDyn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inFlex)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inVol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inHeight)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inDyas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inSyst)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inReturn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inLoad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inStill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inHbfreturn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inHbfload)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inHbfidle)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.GroopBox6.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.inNum);
+            this.groupBox1.Controls.Add(this.inLift);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.inTime);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.inEx);
+            this.groupBox1.Controls.Add(this.inExcursion);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.inJump);
             this.groupBox1.Controls.Add(this.label13);
@@ -143,7 +143,7 @@
             this.groupBox1.Controls.Add(this.inDyn);
             this.groupBox1.Controls.Add(this.inFlex);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.inVol);
+            this.groupBox1.Controls.Add(this.inVolume);
             this.groupBox1.Controls.Add(this.inWeight);
             this.groupBox1.Controls.Add(this.inHeight);
             this.groupBox1.Controls.Add(this.label10);
@@ -156,28 +156,25 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.inBday);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(20, 20);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.groupBox1.Size = new System.Drawing.Size(853, 457);
+            this.groupBox1.Size = new System.Drawing.Size(512, 270);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Входные параметры";
             // 
-            // inNum
+            // inLift
             // 
-            this.inNum.Location = new System.Drawing.Point(753, 401);
-            this.inNum.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.inNum.Minimum = new decimal(new int[] {
+            this.inLift.Location = new System.Drawing.Point(452, 237);
+            this.inLift.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.inNum.Name = "inNum";
-            this.inNum.Size = new System.Drawing.Size(90, 28);
-            this.inNum.TabIndex = 24;
-            this.inNum.Value = new decimal(new int[] {
+            this.inLift.Name = "inLift";
+            this.inLift.Size = new System.Drawing.Size(54, 20);
+            this.inLift.TabIndex = 24;
+            this.inLift.Value = new decimal(new int[] {
             20,
             0,
             0,
@@ -186,17 +183,15 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(280, 404);
-            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label16.Location = new System.Drawing.Point(168, 239);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(476, 24);
+            this.label16.Size = new System.Drawing.Size(278, 13);
             this.label16.TabIndex = 23;
             this.label16.Text = "Число подъёмов туловища в сед за 60 сек (раз/мин)";
             // 
             // inTime
             // 
-            this.inTime.Location = new System.Drawing.Point(753, 357);
-            this.inTime.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inTime.Location = new System.Drawing.Point(452, 211);
             this.inTime.Maximum = new decimal(new int[] {
             150,
             0,
@@ -208,7 +203,7 @@
             0,
             0});
             this.inTime.Name = "inTime";
-            this.inTime.Size = new System.Drawing.Size(90, 28);
+            this.inTime.Size = new System.Drawing.Size(54, 20);
             this.inTime.TabIndex = 22;
             this.inTime.Value = new decimal(new int[] {
             30,
@@ -219,32 +214,30 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(388, 360);
-            this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label15.Location = new System.Drawing.Point(233, 213);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(375, 24);
+            this.label15.Size = new System.Drawing.Size(213, 13);
             this.label15.TabIndex = 21;
             this.label15.Text = "Время задержки дыхания на вдохе (сек)";
             // 
-            // inEx
+            // inExcursion
             // 
-            this.inEx.DecimalPlaces = 1;
-            this.inEx.Location = new System.Drawing.Point(753, 313);
-            this.inEx.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.inEx.Maximum = new decimal(new int[] {
+            this.inExcursion.DecimalPlaces = 1;
+            this.inExcursion.Location = new System.Drawing.Point(452, 185);
+            this.inExcursion.Maximum = new decimal(new int[] {
             150,
             0,
             0,
             0});
-            this.inEx.Minimum = new decimal(new int[] {
+            this.inExcursion.Minimum = new decimal(new int[] {
             20,
             0,
             0,
             0});
-            this.inEx.Name = "inEx";
-            this.inEx.Size = new System.Drawing.Size(90, 28);
-            this.inEx.TabIndex = 20;
-            this.inEx.Value = new decimal(new int[] {
+            this.inExcursion.Name = "inExcursion";
+            this.inExcursion.Size = new System.Drawing.Size(54, 20);
+            this.inExcursion.TabIndex = 20;
+            this.inExcursion.Value = new decimal(new int[] {
             80,
             0,
             0,
@@ -253,18 +246,16 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(468, 316);
-            this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label14.Location = new System.Drawing.Point(281, 187);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(286, 24);
+            this.label14.Size = new System.Drawing.Size(165, 13);
             this.label14.TabIndex = 19;
             this.label14.Text = "Экскурсия грудной клетки (см)";
             // 
             // inJump
             // 
             this.inJump.DecimalPlaces = 1;
-            this.inJump.Location = new System.Drawing.Point(753, 269);
-            this.inJump.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inJump.Location = new System.Drawing.Point(452, 159);
             this.inJump.Maximum = new decimal(new int[] {
             400,
             0,
@@ -276,7 +267,7 @@
             0,
             0});
             this.inJump.Name = "inJump";
-            this.inJump.Size = new System.Drawing.Size(90, 28);
+            this.inJump.Size = new System.Drawing.Size(54, 20);
             this.inJump.TabIndex = 18;
             this.inJump.Value = new decimal(new int[] {
             160,
@@ -287,28 +278,25 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(483, 272);
-            this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label13.Location = new System.Drawing.Point(290, 161);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(269, 24);
+            this.label13.Size = new System.Drawing.Size(156, 13);
             this.label13.TabIndex = 17;
             this.label13.Text = "Прыжок в длину с места (см)";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(488, 228);
-            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label12.Location = new System.Drawing.Point(293, 135);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(269, 24);
+            this.label12.Size = new System.Drawing.Size(153, 13);
             this.label12.TabIndex = 16;
             this.label12.Text = "Кистевая динамометрия (кг)";
             // 
             // inDyn
             // 
             this.inDyn.DecimalPlaces = 1;
-            this.inDyn.Location = new System.Drawing.Point(753, 225);
-            this.inDyn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inDyn.Location = new System.Drawing.Point(452, 133);
             this.inDyn.Maximum = new decimal(new int[] {
             80,
             0,
@@ -320,7 +308,7 @@
             0,
             0});
             this.inDyn.Name = "inDyn";
-            this.inDyn.Size = new System.Drawing.Size(90, 28);
+            this.inDyn.Size = new System.Drawing.Size(54, 20);
             this.inDyn.TabIndex = 15;
             this.inDyn.Value = new decimal(new int[] {
             15,
@@ -331,8 +319,7 @@
             // inFlex
             // 
             this.inFlex.DecimalPlaces = 1;
-            this.inFlex.Location = new System.Drawing.Point(313, 256);
-            this.inFlex.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inFlex.Location = new System.Drawing.Point(188, 151);
             this.inFlex.Maximum = new decimal(new int[] {
             80,
             0,
@@ -344,7 +331,7 @@
             0,
             -2147483648});
             this.inFlex.Name = "inFlex";
-            this.inFlex.Size = new System.Drawing.Size(90, 28);
+            this.inFlex.Size = new System.Drawing.Size(54, 20);
             this.inFlex.TabIndex = 14;
             this.inFlex.Value = new decimal(new int[] {
             15,
@@ -355,31 +342,29 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(308, 228);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label11.Location = new System.Drawing.Point(185, 135);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(134, 24);
+            this.label11.Size = new System.Drawing.Size(77, 13);
             this.label11.TabIndex = 13;
             this.label11.Text = "Гибкость (см)";
             // 
-            // inVol
+            // inVolume
             // 
-            this.inVol.Increment = new decimal(new int[] {
+            this.inVolume.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.inVol.Location = new System.Drawing.Point(210, 256);
-            this.inVol.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.inVol.Maximum = new decimal(new int[] {
+            this.inVolume.Location = new System.Drawing.Point(126, 151);
+            this.inVolume.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.inVol.Name = "inVol";
-            this.inVol.Size = new System.Drawing.Size(90, 28);
-            this.inVol.TabIndex = 12;
-            this.inVol.Value = new decimal(new int[] {
+            this.inVolume.Name = "inVolume";
+            this.inVolume.Size = new System.Drawing.Size(54, 20);
+            this.inVolume.TabIndex = 12;
+            this.inVolume.Value = new decimal(new int[] {
             2500,
             0,
             0,
@@ -388,8 +373,7 @@
             // inWeight
             // 
             this.inWeight.DecimalPlaces = 1;
-            this.inWeight.Location = new System.Drawing.Point(110, 256);
-            this.inWeight.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inWeight.Location = new System.Drawing.Point(66, 151);
             this.inWeight.Maximum = new decimal(new int[] {
             180,
             0,
@@ -401,7 +385,7 @@
             0,
             0});
             this.inWeight.Name = "inWeight";
-            this.inWeight.Size = new System.Drawing.Size(90, 28);
+            this.inWeight.Size = new System.Drawing.Size(54, 20);
             this.inWeight.TabIndex = 11;
             this.inWeight.Value = new decimal(new int[] {
             50,
@@ -412,8 +396,7 @@
             // inHeight
             // 
             this.inHeight.DecimalPlaces = 1;
-            this.inHeight.Location = new System.Drawing.Point(10, 256);
-            this.inHeight.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inHeight.Location = new System.Drawing.Point(6, 151);
             this.inHeight.Maximum = new decimal(new int[] {
             300,
             0,
@@ -425,7 +408,7 @@
             0,
             0});
             this.inHeight.Name = "inHeight";
-            this.inHeight.Size = new System.Drawing.Size(90, 28);
+            this.inHeight.Size = new System.Drawing.Size(54, 20);
             this.inHeight.TabIndex = 10;
             this.inHeight.Value = new decimal(new int[] {
             160,
@@ -436,30 +419,27 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(205, 228);
-            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label10.Location = new System.Drawing.Point(123, 135);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 24);
+            this.label10.Size = new System.Drawing.Size(56, 13);
             this.label10.TabIndex = 9;
             this.label10.Text = "ЖЕЛ (мл)";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(110, 228);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label9.Location = new System.Drawing.Point(66, 135);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 24);
+            this.label9.Size = new System.Drawing.Size(46, 13);
             this.label9.TabIndex = 8;
             this.label9.Text = "Вес (кг)";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 228);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label8.Location = new System.Drawing.Point(6, 135);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 24);
+            this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 7;
             this.label8.Text = "Рост (см)";
             // 
@@ -469,11 +449,9 @@
             this.groupBox5.Controls.Add(this.inSyst);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Location = new System.Drawing.Point(497, 107);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox5.Location = new System.Drawing.Point(298, 63);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.groupBox5.Size = new System.Drawing.Size(347, 110);
+            this.groupBox5.Size = new System.Drawing.Size(208, 65);
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Артериальное давление (мм.рт.ст)";
@@ -481,15 +459,14 @@
             // 
             // inDyas
             // 
-            this.inDyas.Location = new System.Drawing.Point(173, 61);
-            this.inDyas.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inDyas.Location = new System.Drawing.Point(104, 36);
             this.inDyas.Maximum = new decimal(new int[] {
             150,
             0,
             0,
             0});
             this.inDyas.Name = "inDyas";
-            this.inDyas.Size = new System.Drawing.Size(107, 28);
+            this.inDyas.Size = new System.Drawing.Size(64, 20);
             this.inDyas.TabIndex = 9;
             this.inDyas.Value = new decimal(new int[] {
             70,
@@ -499,15 +476,14 @@
             // 
             // inSyst
             // 
-            this.inSyst.Location = new System.Drawing.Point(15, 61);
-            this.inSyst.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inSyst.Location = new System.Drawing.Point(9, 36);
             this.inSyst.Maximum = new decimal(new int[] {
             220,
             0,
             0,
             0});
             this.inSyst.Name = "inSyst";
-            this.inSyst.Size = new System.Drawing.Size(107, 28);
+            this.inSyst.Size = new System.Drawing.Size(64, 20);
             this.inSyst.TabIndex = 8;
             this.inSyst.Value = new decimal(new int[] {
             120,
@@ -518,36 +494,32 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(168, 32);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Location = new System.Drawing.Point(101, 19);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(159, 24);
+            this.label7.Size = new System.Drawing.Size(92, 13);
             this.label7.TabIndex = 7;
             this.label7.Text = "Диастолическое";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 34);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Location = new System.Drawing.Point(6, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 24);
+            this.label6.Size = new System.Drawing.Size(84, 13);
             this.label6.TabIndex = 6;
             this.label6.Text = "Систолическое";
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.inReturn);
+            this.groupBox4.Controls.Add(this.inHbfreturn);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.inLoad);
+            this.groupBox4.Controls.Add(this.inHbfload);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.inStill);
-            this.groupBox4.Location = new System.Drawing.Point(168, 107);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox4.Controls.Add(this.inHbfidle);
+            this.groupBox4.Location = new System.Drawing.Point(101, 63);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.groupBox4.Size = new System.Drawing.Size(318, 110);
+            this.groupBox4.Size = new System.Drawing.Size(191, 65);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ЧСС (Уд/мин)";
@@ -555,26 +527,24 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(192, 34);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Location = new System.Drawing.Point(115, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 24);
+            this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "Восстановл.";
             // 
-            // inReturn
+            // inHbfreturn
             // 
-            this.inReturn.Location = new System.Drawing.Point(197, 64);
-            this.inReturn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.inReturn.Maximum = new decimal(new int[] {
+            this.inHbfreturn.Location = new System.Drawing.Point(118, 38);
+            this.inHbfreturn.Maximum = new decimal(new int[] {
             150,
             0,
             0,
             0});
-            this.inReturn.Name = "inReturn";
-            this.inReturn.Size = new System.Drawing.Size(83, 28);
-            this.inReturn.TabIndex = 4;
-            this.inReturn.Value = new decimal(new int[] {
+            this.inHbfreturn.Name = "inHbfreturn";
+            this.inHbfreturn.Size = new System.Drawing.Size(50, 20);
+            this.inHbfreturn.TabIndex = 4;
+            this.inHbfreturn.Value = new decimal(new int[] {
             65,
             0,
             0,
@@ -583,26 +553,24 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(98, 34);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Location = new System.Drawing.Point(59, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 24);
+            this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Нагрузки";
             // 
-            // inLoad
+            // inHbfload
             // 
-            this.inLoad.Location = new System.Drawing.Point(103, 64);
-            this.inLoad.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.inLoad.Maximum = new decimal(new int[] {
+            this.inHbfload.Location = new System.Drawing.Point(62, 38);
+            this.inHbfload.Maximum = new decimal(new int[] {
             150,
             0,
             0,
             0});
-            this.inLoad.Name = "inLoad";
-            this.inLoad.Size = new System.Drawing.Size(83, 28);
-            this.inLoad.TabIndex = 2;
-            this.inLoad.Value = new decimal(new int[] {
+            this.inHbfload.Name = "inHbfload";
+            this.inHbfload.Size = new System.Drawing.Size(50, 20);
+            this.inHbfload.TabIndex = 2;
+            this.inHbfload.Value = new decimal(new int[] {
             90,
             0,
             0,
@@ -611,26 +579,24 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 32);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Location = new System.Drawing.Point(7, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 24);
+            this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Покоя";
             // 
-            // inStill
+            // inHbfidle
             // 
-            this.inStill.Location = new System.Drawing.Point(10, 64);
-            this.inStill.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.inStill.Maximum = new decimal(new int[] {
+            this.inHbfidle.Location = new System.Drawing.Point(6, 38);
+            this.inHbfidle.Maximum = new decimal(new int[] {
             150,
             0,
             0,
             0});
-            this.inStill.Name = "inStill";
-            this.inStill.Size = new System.Drawing.Size(83, 28);
-            this.inStill.TabIndex = 0;
-            this.inStill.Value = new decimal(new int[] {
+            this.inHbfidle.Name = "inHbfidle";
+            this.inHbfidle.Size = new System.Drawing.Size(50, 20);
+            this.inHbfidle.TabIndex = 0;
+            this.inHbfidle.Value = new decimal(new int[] {
             60,
             0,
             0,
@@ -640,11 +606,9 @@
             // 
             this.groupBox3.Controls.Add(this.inWoman);
             this.groupBox3.Controls.Add(this.inMan);
-            this.groupBox3.Location = new System.Drawing.Point(17, 105);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox3.Location = new System.Drawing.Point(10, 62);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.groupBox3.Size = new System.Drawing.Size(140, 112);
+            this.groupBox3.Size = new System.Drawing.Size(84, 66);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Пол";
@@ -652,10 +616,9 @@
             // inWoman
             // 
             this.inWoman.AutoSize = true;
-            this.inWoman.Location = new System.Drawing.Point(10, 71);
-            this.inWoman.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inWoman.Location = new System.Drawing.Point(6, 42);
             this.inWoman.Name = "inWoman";
-            this.inWoman.Size = new System.Drawing.Size(114, 28);
+            this.inWoman.Size = new System.Drawing.Size(72, 17);
             this.inWoman.TabIndex = 1;
             this.inWoman.TabStop = true;
             this.inWoman.Text = "Женский";
@@ -664,10 +627,9 @@
             // inMan
             // 
             this.inMan.AutoSize = true;
-            this.inMan.Location = new System.Drawing.Point(10, 32);
-            this.inMan.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inMan.Location = new System.Drawing.Point(6, 19);
             this.inMan.Name = "inMan";
-            this.inMan.Size = new System.Drawing.Size(115, 28);
+            this.inMan.Size = new System.Drawing.Size(71, 17);
             this.inMan.TabIndex = 0;
             this.inMan.TabStop = true;
             this.inMan.Text = "Мужской";
@@ -675,38 +637,34 @@
             // 
             // inFio
             // 
-            this.inFio.Location = new System.Drawing.Point(17, 61);
-            this.inFio.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inFio.Location = new System.Drawing.Point(10, 36);
             this.inFio.Name = "inFio";
-            this.inFio.Size = new System.Drawing.Size(577, 28);
+            this.inFio.Size = new System.Drawing.Size(348, 20);
             this.inFio.TabIndex = 3;
             this.inFio.TextChanged += new System.EventHandler(this.inFio_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(602, 34);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(361, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 24);
+            this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Дата рождения";
             // 
             // inBday
             // 
-            this.inBday.Location = new System.Drawing.Point(607, 61);
-            this.inBday.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.inBday.Location = new System.Drawing.Point(364, 36);
             this.inBday.Name = "inBday";
-            this.inBday.Size = new System.Drawing.Size(234, 28);
+            this.inBday.Size = new System.Drawing.Size(142, 20);
             this.inBday.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(7, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 24);
+            this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ФИО";
             // 
@@ -716,19 +674,17 @@
             this.groupBox2.Controls.Add(this.label30);
             this.groupBox2.Controls.Add(this.label29);
             this.groupBox2.Controls.Add(this.label28);
-            this.groupBox2.Controls.Add(this.textBox16);
-            this.groupBox2.Controls.Add(this.textBox15);
-            this.groupBox2.Controls.Add(this.textBox14);
-            this.groupBox2.Controls.Add(this.textBox13);
+            this.groupBox2.Controls.Add(this.outSumm);
+            this.groupBox2.Controls.Add(this.outDynm);
+            this.groupBox2.Controls.Add(this.outJump);
+            this.groupBox2.Controls.Add(this.outEcxs);
             this.groupBox2.Controls.Add(this.label27);
-            this.groupBox2.Controls.Add(this.textBox12);
+            this.groupBox2.Controls.Add(this.outFlex);
             this.groupBox2.Controls.Add(this.groupBox6);
-            this.groupBox2.Controls.Add(this.GroopBox6);
-            this.groupBox2.Location = new System.Drawing.Point(883, 20);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox2.Controls.Add(this.groupBox8);
+            this.groupBox2.Location = new System.Drawing.Point(530, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.groupBox2.Size = new System.Drawing.Size(777, 457);
+            this.groupBox2.Size = new System.Drawing.Size(466, 270);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Рассчитанные параметры";
@@ -736,123 +692,111 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(272, 406);
-            this.label31.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label31.Location = new System.Drawing.Point(163, 240);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(409, 24);
+            this.label31.Size = new System.Drawing.Size(232, 13);
             this.label31.TabIndex = 25;
             this.label31.Text = "Суммарный диагностический коэффициент:";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(138, 360);
-            this.label30.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label30.Location = new System.Drawing.Point(83, 213);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(234, 24);
+            this.label30.Size = new System.Drawing.Size(133, 13);
             this.label30.TabIndex = 24;
             this.label30.Text = "Кистевая динамометрия";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(138, 316);
-            this.label29.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label29.Location = new System.Drawing.Point(83, 187);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(229, 24);
+            this.label29.Size = new System.Drawing.Size(133, 13);
             this.label29.TabIndex = 23;
             this.label29.Text = "Прыжок в длину с места";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(138, 272);
-            this.label28.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label28.Location = new System.Drawing.Point(83, 161);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(237, 24);
+            this.label28.Size = new System.Drawing.Size(137, 13);
             this.label28.TabIndex = 19;
             this.label28.Text = "Экскрсия грудной клетки";
             // 
-            // textBox16
+            // outSumm
             // 
-            this.textBox16.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox16.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox16.Location = new System.Drawing.Point(667, 401);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(97, 28);
-            this.textBox16.TabIndex = 22;
+            this.outSumm.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outSumm.ForeColor = System.Drawing.SystemColors.Info;
+            this.outSumm.Location = new System.Drawing.Point(400, 237);
+            this.outSumm.Name = "outSumm";
+            this.outSumm.ReadOnly = true;
+            this.outSumm.Size = new System.Drawing.Size(60, 20);
+            this.outSumm.TabIndex = 22;
             // 
-            // textBox15
+            // outDynm
             // 
-            this.textBox15.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox15.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox15.Location = new System.Drawing.Point(28, 357);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(97, 28);
-            this.textBox15.TabIndex = 21;
+            this.outDynm.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outDynm.ForeColor = System.Drawing.SystemColors.Info;
+            this.outDynm.Location = new System.Drawing.Point(17, 211);
+            this.outDynm.Name = "outDynm";
+            this.outDynm.ReadOnly = true;
+            this.outDynm.Size = new System.Drawing.Size(60, 20);
+            this.outDynm.TabIndex = 21;
             // 
-            // textBox14
+            // outJump
             // 
-            this.textBox14.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox14.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox14.Location = new System.Drawing.Point(28, 313);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(97, 28);
-            this.textBox14.TabIndex = 20;
+            this.outJump.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outJump.ForeColor = System.Drawing.SystemColors.Info;
+            this.outJump.Location = new System.Drawing.Point(17, 185);
+            this.outJump.Name = "outJump";
+            this.outJump.ReadOnly = true;
+            this.outJump.Size = new System.Drawing.Size(60, 20);
+            this.outJump.TabIndex = 20;
             // 
-            // textBox13
+            // outEcxs
             // 
-            this.textBox13.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox13.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox13.Location = new System.Drawing.Point(28, 267);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(97, 28);
-            this.textBox13.TabIndex = 19;
+            this.outEcxs.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outEcxs.ForeColor = System.Drawing.SystemColors.Info;
+            this.outEcxs.Location = new System.Drawing.Point(17, 158);
+            this.outEcxs.Name = "outEcxs";
+            this.outEcxs.ReadOnly = true;
+            this.outEcxs.Size = new System.Drawing.Size(60, 20);
+            this.outEcxs.TabIndex = 19;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(592, 174);
-            this.label27.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label27.Location = new System.Drawing.Point(355, 103);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(94, 24);
+            this.label27.Size = new System.Drawing.Size(54, 13);
             this.label27.TabIndex = 19;
             this.label27.Text = "Гибкость";
             // 
-            // textBox12
+            // outFlex
             // 
-            this.textBox12.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox12.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox12.Location = new System.Drawing.Point(583, 203);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(97, 28);
-            this.textBox12.TabIndex = 19;
+            this.outFlex.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outFlex.ForeColor = System.Drawing.SystemColors.Info;
+            this.outFlex.Location = new System.Drawing.Point(350, 120);
+            this.outFlex.Name = "outFlex";
+            this.outFlex.ReadOnly = true;
+            this.outFlex.Size = new System.Drawing.Size(60, 20);
+            this.outFlex.TabIndex = 19;
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.label24);
-            this.groupBox6.Controls.Add(this.textBox11);
-            this.groupBox6.Controls.Add(this.textBox10);
-            this.groupBox6.Controls.Add(this.textBox9);
-            this.groupBox6.Controls.Add(this.textBox8);
+            this.groupBox6.Controls.Add(this.outEcon);
+            this.groupBox6.Controls.Add(this.outSTR);
+            this.groupBox6.Controls.Add(this.outHBF);
+            this.groupBox6.Controls.Add(this.outType);
             this.groupBox6.Controls.Add(this.label23);
-            this.groupBox6.Location = new System.Drawing.Point(12, 146);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox6.Location = new System.Drawing.Point(7, 86);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.groupBox6.Size = new System.Drawing.Size(512, 102);
+            this.groupBox6.Size = new System.Drawing.Size(307, 60);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Кровообращение";
@@ -860,324 +804,295 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(260, 29);
-            this.label26.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label26.Location = new System.Drawing.Point(156, 17);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(50, 24);
+            this.label26.Size = new System.Drawing.Size(32, 13);
             this.label26.TabIndex = 18;
             this.label26.Text = "ПДП";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(153, 30);
-            this.label25.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label25.Location = new System.Drawing.Point(92, 18);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(47, 24);
+            this.label25.Size = new System.Drawing.Size(29, 13);
             this.label25.TabIndex = 17;
             this.label25.Text = "ЧСС";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(42, 30);
-            this.label24.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label24.Location = new System.Drawing.Point(25, 18);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(44, 24);
+            this.label24.Size = new System.Drawing.Size(26, 13);
             this.label24.TabIndex = 16;
             this.label24.Text = "Тип";
             // 
-            // textBox11
+            // outEcon
             // 
-            this.textBox11.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox11.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox11.Location = new System.Drawing.Point(368, 58);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(97, 28);
-            this.textBox11.TabIndex = 15;
+            this.outEcon.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outEcon.ForeColor = System.Drawing.SystemColors.Info;
+            this.outEcon.Location = new System.Drawing.Point(221, 34);
+            this.outEcon.Name = "outEcon";
+            this.outEcon.ReadOnly = true;
+            this.outEcon.Size = new System.Drawing.Size(60, 20);
+            this.outEcon.TabIndex = 15;
             // 
-            // textBox10
+            // outSTR
             // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox10.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox10.Location = new System.Drawing.Point(237, 58);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(97, 28);
-            this.textBox10.TabIndex = 14;
+            this.outSTR.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outSTR.ForeColor = System.Drawing.SystemColors.Info;
+            this.outSTR.Location = new System.Drawing.Point(142, 34);
+            this.outSTR.Name = "outSTR";
+            this.outSTR.ReadOnly = true;
+            this.outSTR.Size = new System.Drawing.Size(60, 20);
+            this.outSTR.TabIndex = 14;
             // 
-            // textBox9
+            // outHBF
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox9.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox9.Location = new System.Drawing.Point(127, 58);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(97, 28);
-            this.textBox9.TabIndex = 13;
+            this.outHBF.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outHBF.ForeColor = System.Drawing.SystemColors.Info;
+            this.outHBF.Location = new System.Drawing.Point(76, 34);
+            this.outHBF.Name = "outHBF";
+            this.outHBF.ReadOnly = true;
+            this.outHBF.Size = new System.Drawing.Size(60, 20);
+            this.outHBF.TabIndex = 13;
             // 
-            // textBox8
+            // outType
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox8.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox8.Location = new System.Drawing.Point(17, 58);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(97, 28);
-            this.textBox8.TabIndex = 12;
+            this.outType.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outType.ForeColor = System.Drawing.SystemColors.Info;
+            this.outType.Location = new System.Drawing.Point(10, 34);
+            this.outType.Name = "outType";
+            this.outType.ReadOnly = true;
+            this.outType.Size = new System.Drawing.Size(60, 20);
+            this.outType.TabIndex = 12;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(350, 29);
-            this.label23.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label23.Location = new System.Drawing.Point(210, 17);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(152, 24);
+            this.label23.Size = new System.Drawing.Size(86, 13);
             this.label23.TabIndex = 0;
             this.label23.Text = "Экономичность";
             // 
-            // GroopBox6
+            // groupBox8
             // 
-            this.GroopBox6.Controls.Add(this.textBox7);
-            this.GroopBox6.Controls.Add(this.label22);
-            this.GroopBox6.Controls.Add(this.label21);
-            this.GroopBox6.Controls.Add(this.label20);
-            this.GroopBox6.Controls.Add(this.label19);
-            this.GroopBox6.Controls.Add(this.label18);
-            this.GroopBox6.Controls.Add(this.textBox6);
-            this.GroopBox6.Controls.Add(this.textBox5);
-            this.GroopBox6.Controls.Add(this.textBox4);
-            this.GroopBox6.Controls.Add(this.textBox3);
-            this.GroopBox6.Controls.Add(this.textBox2);
-            this.GroopBox6.Controls.Add(this.label17);
-            this.GroopBox6.Location = new System.Drawing.Point(12, 34);
-            this.GroopBox6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.GroopBox6.Name = "GroopBox6";
-            this.GroopBox6.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.GroopBox6.Size = new System.Drawing.Size(755, 102);
-            this.GroopBox6.TabIndex = 0;
-            this.GroopBox6.TabStop = false;
-            this.GroopBox6.Text = "Индексы";
+            this.groupBox8.Controls.Add(this.outFunc);
+            this.groupBox8.Controls.Add(this.label22);
+            this.groupBox8.Controls.Add(this.label21);
+            this.groupBox8.Controls.Add(this.label20);
+            this.groupBox8.Controls.Add(this.label19);
+            this.groupBox8.Controls.Add(this.label18);
+            this.groupBox8.Controls.Add(this.outSkir);
+            this.groupBox8.Controls.Add(this.outShap);
+            this.groupBox8.Controls.Add(this.outRoof);
+            this.groupBox8.Controls.Add(this.outKerd);
+            this.groupBox8.Controls.Add(this.outPinj);
+            this.groupBox8.Controls.Add(this.label17);
+            this.groupBox8.Location = new System.Drawing.Point(7, 20);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(453, 60);
+            this.groupBox8.TabIndex = 0;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Индексы";
             // 
-            // textBox7
+            // outFunc
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox7.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox7.Location = new System.Drawing.Point(627, 54);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(97, 28);
-            this.textBox7.TabIndex = 11;
+            this.outFunc.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outFunc.ForeColor = System.Drawing.SystemColors.Info;
+            this.outFunc.Location = new System.Drawing.Point(376, 32);
+            this.outFunc.Name = "outFunc";
+            this.outFunc.ReadOnly = true;
+            this.outFunc.Size = new System.Drawing.Size(60, 20);
+            this.outFunc.TabIndex = 11;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(653, 27);
-            this.label22.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label22.Location = new System.Drawing.Point(392, 16);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(39, 24);
+            this.label22.Size = new System.Drawing.Size(26, 13);
             this.label22.TabIndex = 10;
             this.label22.Text = "ФИ";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(478, 27);
-            this.label21.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label21.Location = new System.Drawing.Point(287, 16);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(137, 24);
+            this.label21.Size = new System.Drawing.Size(79, 13);
             this.label21.TabIndex = 9;
             this.label21.Text = "Скирбинского";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(342, 27);
-            this.label20.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label20.Location = new System.Drawing.Point(205, 16);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(131, 24);
+            this.label20.Size = new System.Drawing.Size(76, 13);
             this.label20.TabIndex = 8;
             this.label20.Text = "Шаповаловой";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(252, 27);
-            this.label19.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label19.Location = new System.Drawing.Point(151, 16);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(67, 24);
+            this.label19.Size = new System.Drawing.Size(39, 13);
             this.label19.TabIndex = 7;
             this.label19.Text = "Руфье";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(147, 27);
-            this.label18.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label18.Location = new System.Drawing.Point(88, 16);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(67, 24);
+            this.label18.Size = new System.Drawing.Size(38, 13);
             this.label18.TabIndex = 6;
             this.label18.Text = "Кердо";
             // 
-            // textBox6
+            // outSkir
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox6.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox6.Location = new System.Drawing.Point(492, 54);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(97, 28);
-            this.textBox6.TabIndex = 5;
+            this.outSkir.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outSkir.ForeColor = System.Drawing.SystemColors.Info;
+            this.outSkir.Location = new System.Drawing.Point(295, 32);
+            this.outSkir.Name = "outSkir";
+            this.outSkir.ReadOnly = true;
+            this.outSkir.Size = new System.Drawing.Size(60, 20);
+            this.outSkir.TabIndex = 5;
             // 
-            // textBox5
+            // outShap
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox5.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox5.Location = new System.Drawing.Point(353, 54);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(97, 28);
-            this.textBox5.TabIndex = 4;
+            this.outShap.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outShap.ForeColor = System.Drawing.SystemColors.Info;
+            this.outShap.Location = new System.Drawing.Point(212, 32);
+            this.outShap.Name = "outShap";
+            this.outShap.ReadOnly = true;
+            this.outShap.Size = new System.Drawing.Size(60, 20);
+            this.outShap.TabIndex = 4;
             // 
-            // textBox4
+            // outRoof
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox4.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox4.Location = new System.Drawing.Point(237, 54);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(97, 28);
-            this.textBox4.TabIndex = 3;
+            this.outRoof.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outRoof.ForeColor = System.Drawing.SystemColors.Info;
+            this.outRoof.Location = new System.Drawing.Point(142, 32);
+            this.outRoof.Name = "outRoof";
+            this.outRoof.ReadOnly = true;
+            this.outRoof.Size = new System.Drawing.Size(60, 20);
+            this.outRoof.TabIndex = 3;
             // 
-            // textBox3
+            // outKerd
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox3.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox3.Location = new System.Drawing.Point(127, 54);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(97, 28);
-            this.textBox3.TabIndex = 2;
+            this.outKerd.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outKerd.ForeColor = System.Drawing.SystemColors.Info;
+            this.outKerd.Location = new System.Drawing.Point(76, 32);
+            this.outKerd.Name = "outKerd";
+            this.outKerd.ReadOnly = true;
+            this.outKerd.Size = new System.Drawing.Size(60, 20);
+            this.outKerd.TabIndex = 2;
             // 
-            // textBox2
+            // outPinj
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox2.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox2.Location = new System.Drawing.Point(17, 54);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(97, 28);
-            this.textBox2.TabIndex = 1;
+            this.outPinj.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outPinj.ForeColor = System.Drawing.SystemColors.Info;
+            this.outPinj.Location = new System.Drawing.Point(10, 32);
+            this.outPinj.Name = "outPinj";
+            this.outPinj.ReadOnly = true;
+            this.outPinj.Size = new System.Drawing.Size(60, 20);
+            this.outPinj.TabIndex = 1;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(35, 27);
-            this.label17.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label17.Location = new System.Drawing.Point(21, 16);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 24);
+            this.label17.Size = new System.Drawing.Size(39, 13);
             this.label17.TabIndex = 0;
             this.label17.Text = "Пинье";
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button3);
-            this.groupBox7.Controls.Add(this.button2);
-            this.groupBox7.Controls.Add(this.button1);
-            this.groupBox7.Location = new System.Drawing.Point(1405, 487);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox7.Controls.Add(this.btnLoad);
+            this.groupBox7.Controls.Add(this.btnSave);
+            this.groupBox7.Controls.Add(this.btnCalc);
+            this.groupBox7.Location = new System.Drawing.Point(843, 288);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.groupBox7.Size = new System.Drawing.Size(255, 188);
+            this.groupBox7.Size = new System.Drawing.Size(153, 111);
             this.groupBox7.TabIndex = 2;
             this.groupBox7.TabStop = false;
             // 
-            // button3
+            // btnLoad
             // 
-            this.button3.Location = new System.Drawing.Point(10, 130);
-            this.button3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(228, 39);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Загрузить данные";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnLoad.Location = new System.Drawing.Point(6, 77);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(137, 23);
+            this.btnLoad.TabIndex = 2;
+            this.btnLoad.Text = "Загрузить данные";
+            this.btnLoad.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnSave
             // 
-            this.button2.Location = new System.Drawing.Point(10, 81);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(228, 39);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Сохранить данные";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(6, 48);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(137, 23);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Сохранить данные";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCalc
             // 
-            this.button1.Location = new System.Drawing.Point(10, 32);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Рассчитать показатели";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCalc.Location = new System.Drawing.Point(6, 19);
+            this.btnCalc.Name = "btnCalc";
+            this.btnCalc.Size = new System.Drawing.Size(137, 23);
+            this.btnCalc.TabIndex = 0;
+            this.btnCalc.Text = "Рассчитать показатели";
+            this.btnCalc.UseVisualStyleBackColor = true;
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(20, 492);
-            this.label32.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label32.Location = new System.Drawing.Point(12, 291);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(120, 24);
+            this.label32.Size = new System.Drawing.Size(69, 13);
             this.label32.TabIndex = 26;
             this.label32.Text = "Заключение";
             // 
-            // textBox17
+            // outEnded
             // 
-            this.textBox17.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox17.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox17.Location = new System.Drawing.Point(20, 520);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.textBox17.Multiline = true;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(1366, 134);
-            this.textBox17.TabIndex = 26;
+            this.outEnded.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outEnded.ForeColor = System.Drawing.SystemColors.Info;
+            this.outEnded.Location = new System.Drawing.Point(12, 307);
+            this.outEnded.Multiline = true;
+            this.outEnded.Name = "outEnded";
+            this.outEnded.ReadOnly = true;
+            this.outEnded.Size = new System.Drawing.Size(821, 81);
+            this.outEnded.TabIndex = 26;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1680, 687);
-            this.Controls.Add(this.textBox17);
+            this.ClientSize = new System.Drawing.Size(1008, 406);
+            this.Controls.Add(this.outEnded);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "Form1";
             this.Text = "Рассчёт параметров";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inLift)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inEx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inExcursion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inJump)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDyn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inFlex)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inVol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inHeight)).EndInit();
             this.groupBox5.ResumeLayout(false);
@@ -1186,17 +1101,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.inSyst)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inReturn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inLoad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inStill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inHbfreturn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inHbfload)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inHbfidle)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.GroopBox6.ResumeLayout(false);
-            this.GroopBox6.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1213,11 +1128,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown inReturn;
+        private System.Windows.Forms.NumericUpDown inHbfreturn;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown inLoad;
+        private System.Windows.Forms.NumericUpDown inHbfload;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown inStill;
+        private System.Windows.Forms.NumericUpDown inHbfidle;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton inWoman;
         private System.Windows.Forms.RadioButton inMan;
@@ -1226,11 +1141,11 @@
         private System.Windows.Forms.DateTimePicker inBday;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.NumericUpDown inNum;
+        private System.Windows.Forms.NumericUpDown inLift;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.NumericUpDown inTime;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown inEx;
+        private System.Windows.Forms.NumericUpDown inExcursion;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.NumericUpDown inJump;
         private System.Windows.Forms.Label label13;
@@ -1238,7 +1153,7 @@
         private System.Windows.Forms.NumericUpDown inDyn;
         private System.Windows.Forms.NumericUpDown inFlex;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown inVol;
+        private System.Windows.Forms.NumericUpDown inVolume;
         private System.Windows.Forms.NumericUpDown inWeight;
         private System.Windows.Forms.NumericUpDown inHeight;
         private System.Windows.Forms.Label label10;
@@ -1248,40 +1163,40 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox outSumm;
+        private System.Windows.Forms.TextBox outDynm;
+        private System.Windows.Forms.TextBox outJump;
+        private System.Windows.Forms.TextBox outEcxs;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox outFlex;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox outEcon;
+        private System.Windows.Forms.TextBox outSTR;
+        private System.Windows.Forms.TextBox outHBF;
+        private System.Windows.Forms.TextBox outType;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.GroupBox GroopBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox outFunc;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox outSkir;
+        private System.Windows.Forms.TextBox outShap;
+        private System.Windows.Forms.TextBox outRoof;
+        private System.Windows.Forms.TextBox outKerd;
+        private System.Windows.Forms.TextBox outPinj;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox outEnded;
     }
 }
 

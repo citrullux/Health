@@ -15,7 +15,7 @@ namespace Health_Monitor
         {
             InitializeComponent();
         }
-
+        // Магия?
         private void groupBox5_Enter(object sender, EventArgs e)
         {
 
@@ -30,5 +30,13 @@ namespace Health_Monitor
         {
 
         }
+        
+        // Производства рассчёта в форме.
+        // Забор переменных из входных значений и рассчёт
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
