@@ -104,7 +104,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCalc = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
-            this.outEnded = new System.Windows.Forms.TextBox();
+            this.outDiag = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inLift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inTime)).BeginInit();
@@ -1060,23 +1060,23 @@
             this.label32.TabIndex = 26;
             this.label32.Text = "Заключение";
             // 
-            // outEnded
+            // outDiag
             // 
-            this.outEnded.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outEnded.ForeColor = System.Drawing.SystemColors.Info;
-            this.outEnded.Location = new System.Drawing.Point(12, 307);
-            this.outEnded.Multiline = true;
-            this.outEnded.Name = "outEnded";
-            this.outEnded.ReadOnly = true;
-            this.outEnded.Size = new System.Drawing.Size(821, 81);
-            this.outEnded.TabIndex = 26;
+            this.outDiag.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outDiag.ForeColor = System.Drawing.SystemColors.Info;
+            this.outDiag.Location = new System.Drawing.Point(12, 307);
+            this.outDiag.Multiline = true;
+            this.outDiag.Name = "outDiag";
+            this.outDiag.ReadOnly = true;
+            this.outDiag.Size = new System.Drawing.Size(821, 81);
+            this.outDiag.TabIndex = 26;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 406);
-            this.Controls.Add(this.outEnded);
+            this.Controls.Add(this.outDiag);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox2);
@@ -1196,7 +1196,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox outEnded;
+        private System.Windows.Forms.TextBox outDiag;
     }
 }
 
