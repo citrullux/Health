@@ -8,7 +8,7 @@ namespace Health_Monitor
     public class in_out
     {
         // Входные переменные
-        public int Sex{get;set;}
+        public int Gender{get;set;}
         public string FIO {get;set;}
         public int Age{get;set;}
         public int Volume{get;set;}
@@ -29,32 +29,69 @@ namespace Health_Monitor
         public int Lift{get;set;}
         // Подъёмов тела
 
-        public float Height {get;set;} 
-        public float Weight {get;set;} 
-        public float Excurcion{get;set;}
-        // Экскурсия грудной клетки
-        public float Flexibility{get;set;} 
+        public double Height {get;set;} 
+        public double Weight {get;set;} 
+
+
+        // Окружность грудной клетки
+        public double Circle { get; set; }
+        public double CircleFull { get; set; }
+
+        public double Flexibility{get;set;} 
         // Гибкость
-        public float Jump{get;set;}
-        public float Dynam{get;set;}
+        public double Jump{get;set;}
+        public double Dynam{get;set;}
         // Динамометрия
+
+
+        public double Excurcion { get {return CircleFull-Circle ;} }
+        // Рассчёт индекса Пинье
+        public double oPinj { get { return Height - (Weight + Circle);} }
+
+        // Рассчёт вегетативного индекса Кердо
+        public double oKerd { get { return (1 - Dyast / HBFIdle) * 100;} }
+
+        // Рассчёт индекса Руфье
+        public double oRoof { get { return (HBFIdle+HBFLoad+HBFReturn-200)/10;} }
         
-        public float oPinj { get { ;} }
-        public float oKerd { get { ;} }
-        public float oRoof { get { ;} }
-        public float oShap { get { ;} }
-        public float oSkir { get { ;} }
-        public float oFunc { get { ;} }
-        public float oType { get { ;} }
+        // Рассчёт индекса Шаповаловой
+        public double oShap { get { return Weight/Height*Lift/60;} }
+        
+        // Рассчёт индекса Скирбинского
+        public double oSkir { get { return Volume*Time/HBFIdle;} }
+        
+        // Рассчёт индекса функциональных изменений
+        public double oFunc { get { return 0.011 * HBFIdle + 0.014 * Syst + 0.008 * Dyast + 0.009 * Weight - 0.009 * Height + 0.0014 * Age - 0.27;} }
+        
+        // Тип кровообращения
+        public double oType { get { return (Syst-Dyast)*200/(Syst-Dyast)/(167.2*Weight*Height*0.0001);} }
+        
+        // ЧСС
         public int oHBF { get { return HBFIdle; } }
-        public float oSTR { get { ;} }
-        public float oEcon { get { ;} }
-        public float oFlex { get { ;} }
-        public float oEcxs { get { ;} }
-        public float oJump { get { ;} }
-        public float oDynm { get { ;} }
-        public float oSumm { get { ;} }
-        public float oDiag { get { ;} }
+        
+        // Показатель двайного преломления
+        public double oSTR { get { return (HBFIdle*Syst)/100;} }
+
+        // Рассчёт экономичности кровообращения
+        public double oEcon { get { return (Syst-Dyast)*HBFIdle;} }
+        
+        // Суммарный диагностический коэффициент
+        public double oSumm 
+        { 
+            get 
+            { 
+                return 0;
+            } 
+        }
+        
+        // Диагноз
+        public double oDiag 
+        { 
+            get 
+            { 
+                return 0;
+            } 
+        }
 
     }
 }

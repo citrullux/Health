@@ -33,8 +33,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.inTime = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
-            this.inExcursion = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
             this.inJump = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -105,10 +103,14 @@
             this.btnCalc = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.outDiag = new System.Windows.Forms.TextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.inCirc = new System.Windows.Forms.NumericUpDown();
+            this.label34 = new System.Windows.Forms.Label();
+            this.inCircfull = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inLift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inExcursion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inJump)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDyn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inFlex)).BeginInit();
@@ -127,16 +129,18 @@
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inCirc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inCircfull)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox9);
             this.groupBox1.Controls.Add(this.inLift);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.inTime);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.inExcursion);
-            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.inJump);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
@@ -158,14 +162,14 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(512, 270);
+            this.groupBox1.Size = new System.Drawing.Size(512, 284);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Входные параметры";
             // 
             // inLift
             // 
-            this.inLift.Location = new System.Drawing.Point(452, 237);
+            this.inLift.Location = new System.Drawing.Point(452, 258);
             this.inLift.Minimum = new decimal(new int[] {
             1,
             0,
@@ -183,7 +187,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(168, 239);
+            this.label16.Location = new System.Drawing.Point(169, 260);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(278, 13);
             this.label16.TabIndex = 23;
@@ -191,7 +195,7 @@
             // 
             // inTime
             // 
-            this.inTime.Location = new System.Drawing.Point(452, 211);
+            this.inTime.Location = new System.Drawing.Point(452, 185);
             this.inTime.Maximum = new decimal(new int[] {
             150,
             0,
@@ -214,43 +218,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(233, 213);
+            this.label15.Location = new System.Drawing.Point(234, 187);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(213, 13);
             this.label15.TabIndex = 21;
             this.label15.Text = "Время задержки дыхания на вдохе (сек)";
-            // 
-            // inExcursion
-            // 
-            this.inExcursion.DecimalPlaces = 1;
-            this.inExcursion.Location = new System.Drawing.Point(452, 185);
-            this.inExcursion.Maximum = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
-            this.inExcursion.Minimum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.inExcursion.Name = "inExcursion";
-            this.inExcursion.Size = new System.Drawing.Size(54, 20);
-            this.inExcursion.TabIndex = 20;
-            this.inExcursion.Value = new decimal(new int[] {
-            80,
-            0,
-            0,
-            0});
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(281, 187);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(165, 13);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "Экскурсия грудной клетки (см)";
             // 
             // inJump
             // 
@@ -684,7 +656,7 @@
             this.groupBox2.Controls.Add(this.groupBox8);
             this.groupBox2.Location = new System.Drawing.Point(530, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(466, 270);
+            this.groupBox2.Size = new System.Drawing.Size(466, 281);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Рассчитанные параметры";
@@ -1017,7 +989,7 @@
             this.groupBox7.Controls.Add(this.btnLoad);
             this.groupBox7.Controls.Add(this.btnSave);
             this.groupBox7.Controls.Add(this.btnCalc);
-            this.groupBox7.Location = new System.Drawing.Point(843, 288);
+            this.groupBox7.Location = new System.Drawing.Point(843, 299);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(153, 111);
             this.groupBox7.TabIndex = 2;
@@ -1054,7 +1026,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(12, 291);
+            this.label32.Location = new System.Drawing.Point(12, 299);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(69, 13);
             this.label32.TabIndex = 26;
@@ -1064,18 +1036,93 @@
             // 
             this.outDiag.BackColor = System.Drawing.SystemColors.ControlDark;
             this.outDiag.ForeColor = System.Drawing.SystemColors.Info;
-            this.outDiag.Location = new System.Drawing.Point(12, 307);
+            this.outDiag.Location = new System.Drawing.Point(12, 318);
             this.outDiag.Multiline = true;
             this.outDiag.Name = "outDiag";
             this.outDiag.ReadOnly = true;
             this.outDiag.Size = new System.Drawing.Size(821, 81);
             this.outDiag.TabIndex = 26;
             // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.inCircfull);
+            this.groupBox9.Controls.Add(this.label34);
+            this.groupBox9.Controls.Add(this.inCirc);
+            this.groupBox9.Controls.Add(this.label33);
+            this.groupBox9.Location = new System.Drawing.Point(9, 178);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(191, 61);
+            this.groupBox9.TabIndex = 25;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Окружность грудной клетки (см)";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(6, 16);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(39, 13);
+            this.label33.TabIndex = 26;
+            this.label33.Text = "Покоя";
+            // 
+            // inCirc
+            // 
+            this.inCirc.Location = new System.Drawing.Point(7, 33);
+            this.inCirc.Maximum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.inCirc.Minimum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.inCirc.Name = "inCirc";
+            this.inCirc.Size = new System.Drawing.Size(53, 20);
+            this.inCirc.TabIndex = 27;
+            this.inCirc.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(66, 16);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(53, 13);
+            this.label34.TabIndex = 28;
+            this.label34.Text = "На вдохе";
+            // 
+            // inCircfull
+            // 
+            this.inCircfull.Location = new System.Drawing.Point(69, 32);
+            this.inCircfull.Maximum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.inCircfull.Minimum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.inCircfull.Name = "inCircfull";
+            this.inCircfull.Size = new System.Drawing.Size(53, 20);
+            this.inCircfull.TabIndex = 29;
+            this.inCircfull.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 406);
+            this.ClientSize = new System.Drawing.Size(1008, 422);
             this.Controls.Add(this.outDiag);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.groupBox7);
@@ -1088,7 +1135,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inLift)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inExcursion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inJump)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inDyn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inFlex)).EndInit();
@@ -1113,6 +1159,10 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inCirc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inCircfull)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1145,8 +1195,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.NumericUpDown inTime;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown inExcursion;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.NumericUpDown inJump;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -1197,6 +1245,11 @@
         private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox outDiag;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.NumericUpDown inCircfull;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.NumericUpDown inCirc;
+        private System.Windows.Forms.Label label33;
     }
 }
 
