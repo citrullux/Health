@@ -28,11 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.grid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // grid
+            // 
+            this.grid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid.Location = new System.Drawing.Point(12, 12);
+            this.grid.Name = "grid";
+            this.grid.Size = new System.Drawing.Size(790, 420);
+            this.grid.TabIndex = 0;
+            // 
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1008, 442);
+            this.Controls.Add(this.grid);
+            this.Name = "Form2";
             this.Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView grid;
     }
 }

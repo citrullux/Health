@@ -14,6 +14,11 @@ namespace Health_Monitor
         public Form2()
         {
             InitializeComponent();
+            BindingList<in_out> list = new BindingList<in_out>();
+
+            //Привязки
+            grid.DataSource = list;
         }
+
     }
 }
