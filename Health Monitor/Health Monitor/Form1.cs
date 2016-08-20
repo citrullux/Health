@@ -35,35 +35,35 @@ namespace Health_Monitor
         // Забор переменных из входных значений и рассчёт
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            in_out Param = new in_out();
+            Person Param = new Person();
             
-            Param.FIO = inFio.Text;
+            Param.name = inFio.Text;
             
             if(inMan.Checked == true)
             {
-                Param.Gender = 'м';
+                Param.gender = 'м';
             }
             else
             {
-                Param.Gender = 'ж';
+                Param.gender = 'ж';
             }
 
-            Param.Age = (double)inAge.Value;
-            Param.Volume = (double)inVolume.Value;
-            Param.Time = (double)inTime.Value;
-            Param.HBFIdle = (double)inHbfidle.Value;
-            Param.HBFLoad = (double)inHbfload.Value;
-            Param.HBFReturn = (double)inHbfreturn.Value;
-            Param.Syst = (double)inSyst.Value;
-            Param.Dyast = (double)inDyas.Value;
-            Param.Lift = (double)inLift.Value;
-            Param.Height = (double)inHeight.Value;
-            Param.Weight = (double)inWeight.Value;
-            Param.Circle = (double)inCirc.Value;
-            Param.CircleFull = (double)inCircfull.Value;
-            Param.Dynam = (double)inDyn.Value;
-            Param.Jump = (double)inJump.Value;
-            Param.Flexibility = (double)inFlex.Value;
+            Param.age = (double)inAge.Value;
+            Param.volume = (double)inVolume.Value;
+            Param.time = (double)inTime.Value;
+            Param.hbf_idle = (double)inhbf_idle.Value;
+            Param.hbf_load = (double)inHbfload.Value;
+            Param.hbf_return = (double)inHbfreturn.Value;
+            Param.syst = (double)inSyst.Value;
+            Param.dyast = (double)inDyas.Value;
+            Param.lift = (double)inLift.Value;
+            Param.height = (double)inHeight.Value;
+            Param.weight = (double)inWeight.Value;
+            Param.circle = (double)inCirc.Value;
+            Param.circleFull = (double)inCircfull.Value;
+            Param.dynam = (double)inDyn.Value;
+            Param.jump = (double)inJump.Value;
+            Param.flexibility = (double)inFlex.Value;
 
             outPinj.Text = Param.oPinj.ToString();
             outKerd.Text = Param.oKerd.ToString();
@@ -74,16 +74,16 @@ namespace Health_Monitor
             outType.Text = Param.oType.ToString();
             outSTR.Text = Param.oSTR.ToString();
             outEcon.Text = Param.oEcon.ToString();
-            outJump.Text = Param.Jump.ToString();
-            outDynm.Text = Param.Dynam.ToString();
+            outJump.Text = Param.jump.ToString();
+            outDynm.Text = Param.dynam.ToString();
 
             outEcxs.Text = Param.oExcurcion.ToString();
-            outHBF.Text = Param.HBFIdle.ToString();
-            outFlex.Text = Param.Flexibility.ToString();
+            outHBF.Text = Param.hbf_idle.ToString();
+            outFlex.Text = Param.flexibility.ToString();
             
             
             outSumm.Text = Param.oSumm.ToString();
-            outDiag.Text = Param.oDiag.ToString();
+            outConc.Text = Param.oConc.ToString();
 
         }
 

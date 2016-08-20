@@ -62,7 +62,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.inHbfload = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.inHbfidle = new System.Windows.Forms.NumericUpDown();
+            this.inhbf_idle = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.inWoman = new System.Windows.Forms.RadioButton();
             this.inMan = new System.Windows.Forms.RadioButton();
@@ -107,7 +107,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCalc = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
-            this.outDiag = new System.Windows.Forms.TextBox();
+            this.outConc = new System.Windows.Forms.TextBox();
+            this.inDiag = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inAge)).BeginInit();
             this.groupBox9.SuspendLayout();
@@ -127,7 +129,7 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inHbfreturn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inHbfload)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inHbfidle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inhbf_idle)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -137,6 +139,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.inDiag);
             this.groupBox1.Controls.Add(this.inAge);
             this.groupBox1.Controls.Add(this.groupBox9);
             this.groupBox1.Controls.Add(this.inLift);
@@ -161,6 +165,7 @@
             this.groupBox1.Controls.Add(this.inFio);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(512, 284);
@@ -196,7 +201,7 @@
             this.groupBox9.Controls.Add(this.label34);
             this.groupBox9.Controls.Add(this.inCirc);
             this.groupBox9.Controls.Add(this.label33);
-            this.groupBox9.Location = new System.Drawing.Point(9, 178);
+            this.groupBox9.Location = new System.Drawing.Point(9, 191);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(191, 61);
             this.groupBox9.TabIndex = 25;
@@ -293,7 +298,7 @@
             // 
             // inTime
             // 
-            this.inTime.Location = new System.Drawing.Point(452, 185);
+            this.inTime.Location = new System.Drawing.Point(452, 232);
             this.inTime.Maximum = new decimal(new int[] {
             150,
             0,
@@ -316,7 +321,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(234, 187);
+            this.label15.Location = new System.Drawing.Point(233, 234);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(213, 13);
             this.label15.TabIndex = 21;
@@ -325,7 +330,7 @@
             // inJump
             // 
             this.inJump.DecimalPlaces = 1;
-            this.inJump.Location = new System.Drawing.Point(452, 159);
+            this.inJump.Location = new System.Drawing.Point(452, 206);
             this.inJump.Maximum = new decimal(new int[] {
             400,
             0,
@@ -348,7 +353,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(290, 161);
+            this.label13.Location = new System.Drawing.Point(290, 208);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(156, 13);
             this.label13.TabIndex = 17;
@@ -357,7 +362,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(293, 135);
+            this.label12.Location = new System.Drawing.Point(290, 182);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(153, 13);
             this.label12.TabIndex = 16;
@@ -366,7 +371,7 @@
             // inDyn
             // 
             this.inDyn.DecimalPlaces = 1;
-            this.inDyn.Location = new System.Drawing.Point(452, 133);
+            this.inDyn.Location = new System.Drawing.Point(452, 180);
             this.inDyn.Maximum = new decimal(new int[] {
             80,
             0,
@@ -389,7 +394,7 @@
             // inFlex
             // 
             this.inFlex.DecimalPlaces = 1;
-            this.inFlex.Location = new System.Drawing.Point(188, 151);
+            this.inFlex.Location = new System.Drawing.Point(188, 154);
             this.inFlex.Maximum = new decimal(new int[] {
             80,
             0,
@@ -412,7 +417,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(185, 135);
+            this.label11.Location = new System.Drawing.Point(185, 138);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 13);
             this.label11.TabIndex = 13;
@@ -425,7 +430,7 @@
             0,
             0,
             0});
-            this.inVolume.Location = new System.Drawing.Point(126, 151);
+            this.inVolume.Location = new System.Drawing.Point(126, 154);
             this.inVolume.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -443,7 +448,7 @@
             // inWeight
             // 
             this.inWeight.DecimalPlaces = 1;
-            this.inWeight.Location = new System.Drawing.Point(66, 151);
+            this.inWeight.Location = new System.Drawing.Point(66, 154);
             this.inWeight.Maximum = new decimal(new int[] {
             180,
             0,
@@ -466,7 +471,7 @@
             // inHeight
             // 
             this.inHeight.DecimalPlaces = 1;
-            this.inHeight.Location = new System.Drawing.Point(6, 151);
+            this.inHeight.Location = new System.Drawing.Point(6, 154);
             this.inHeight.Maximum = new decimal(new int[] {
             300,
             0,
@@ -489,7 +494,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(123, 135);
+            this.label10.Location = new System.Drawing.Point(124, 138);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 13);
             this.label10.TabIndex = 9;
@@ -498,7 +503,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(66, 135);
+            this.label9.Location = new System.Drawing.Point(63, 138);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 13);
             this.label9.TabIndex = 8;
@@ -507,7 +512,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 135);
+            this.label8.Location = new System.Drawing.Point(6, 138);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 7;
@@ -586,7 +591,7 @@
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.inHbfload);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.inHbfidle);
+            this.groupBox4.Controls.Add(this.inhbf_idle);
             this.groupBox4.Location = new System.Drawing.Point(101, 63);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(191, 65);
@@ -655,18 +660,18 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Покоя";
             // 
-            // inHbfidle
+            // inhbf_idle
             // 
-            this.inHbfidle.Location = new System.Drawing.Point(6, 38);
-            this.inHbfidle.Maximum = new decimal(new int[] {
+            this.inhbf_idle.Location = new System.Drawing.Point(6, 38);
+            this.inhbf_idle.Maximum = new decimal(new int[] {
             150,
             0,
             0,
             0});
-            this.inHbfidle.Name = "inHbfidle";
-            this.inHbfidle.Size = new System.Drawing.Size(50, 20);
-            this.inHbfidle.TabIndex = 0;
-            this.inHbfidle.Value = new decimal(new int[] {
+            this.inhbf_idle.Name = "inhbf_idle";
+            this.inhbf_idle.Size = new System.Drawing.Size(50, 20);
+            this.inhbf_idle.TabIndex = 0;
+            this.inhbf_idle.Value = new decimal(new int[] {
             60,
             0,
             0,
@@ -1125,23 +1130,49 @@
             this.label32.TabIndex = 26;
             this.label32.Text = "Заключение";
             // 
-            // outDiag
+            // outConc
             // 
-            this.outDiag.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outDiag.ForeColor = System.Drawing.SystemColors.Info;
-            this.outDiag.Location = new System.Drawing.Point(12, 318);
-            this.outDiag.Multiline = true;
-            this.outDiag.Name = "outDiag";
-            this.outDiag.ReadOnly = true;
-            this.outDiag.Size = new System.Drawing.Size(821, 81);
-            this.outDiag.TabIndex = 26;
+            this.outConc.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.outConc.ForeColor = System.Drawing.SystemColors.Info;
+            this.outConc.Location = new System.Drawing.Point(12, 318);
+            this.outConc.Multiline = true;
+            this.outConc.Name = "outConc";
+            this.outConc.ReadOnly = true;
+            this.outConc.Size = new System.Drawing.Size(821, 81);
+            this.outConc.TabIndex = 26;
+            // 
+            // inDiag
+            // 
+            this.inDiag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.inDiag.FormattingEnabled = true;
+            this.inDiag.Items.AddRange(new object[] {
+            "Здоров",
+            "Дых",
+            "ЖКТ",
+            "ОДА",
+            "ССС"});
+            this.inDiag.Location = new System.Drawing.Point(365, 153);
+            this.inDiag.Name = "inDiag";
+            this.inDiag.Size = new System.Drawing.Size(141, 21);
+            this.inDiag.TabIndex = 27;
+            this.inDiag.Tag = "";
+            this.inDiag.SelectedIndex = 0; // здоров по умолчанию
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(410, 138);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 13);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "Диагноз";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 422);
-            this.Controls.Add(this.outDiag);
+            this.Controls.Add(this.outConc);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox2);
@@ -1172,7 +1203,7 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inHbfreturn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inHbfload)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inHbfidle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inhbf_idle)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1201,7 +1232,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown inHbfload;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown inHbfidle;
+        private System.Windows.Forms.NumericUpDown inhbf_idle;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton inWoman;
         private System.Windows.Forms.RadioButton inMan;
@@ -1262,13 +1293,15 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox outDiag;
+        private System.Windows.Forms.TextBox outConc;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.NumericUpDown inCircfull;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.NumericUpDown inCirc;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.NumericUpDown inAge;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox inDiag;
     }
 }
 
