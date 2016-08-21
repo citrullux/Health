@@ -8,6 +8,7 @@ namespace Health_Monitor
     public class Person
     {
         // Входные переменные
+
         [System.ComponentModel.DisplayName("ФИО")]
         public string name { get; set; }
         
@@ -17,13 +18,14 @@ namespace Health_Monitor
         [System.ComponentModel.DisplayName("Возраст")]
         public double age{get;set;}
 
+        [System.ComponentModel.DisplayName("Диагноз")]
+        public string diag { get; set; }
+
         [System.ComponentModel.DisplayName("ЖЁЛ")]
         public double volume{get;set;}
-        // ЖЁЛ
 
         [System.ComponentModel.DisplayName("Время задержки дыхания")]
         public double time{get;set;}
-        // Время задержки дыхания
         
         // Частота сердечных сокращений
         [System.ComponentModel.DisplayName("ЧСС покоя")]
@@ -120,32 +122,60 @@ namespace Health_Monitor
 
         // Суммарный диагностический коэффициент
         [System.ComponentModel.DisplayName("Суммарный диагностический коэффициент")]
-        public double oSumm 
+        public int oSumm 
         { 
             get 
             {
-                if (gender == 'м')
-                {
-                    if (true)
-                    {
-
-                    }
-                }
-                else
-                {
-
-                }
-                return 0;
+                return PinCalc(oPinj) 
+                     + ExcCalc(oExcurcion)
+                     + ScirbCalc(oSkir, gender)
+                     + KerdCalc(oKerd)
+                     + EconCalc(oEcon)
+                     + HBFCalc(hbf_idle, gender)
+                     + STRCalc(oSTR, gender)
+                     + TypeCalc(oType)
+                     + FuncCalc(oFunc)
+                     + FlexCalc(flexibility)
+                     + ShapCalc(oShap, gender)
+                     + JumpCalc(jump, gender)
+                     + RoofCalc(oRoof)
+                     + DynamCalc(dynam, gender);
             } 
         }
 
         [System.ComponentModel.DisplayName("Заключение")]
         // Диагноз
-        public double oConc
+        public string oConc
         { 
             get 
             { 
-                return 0;
+                if (oSumm < -13)
+                {
+                    return "Занятия ФК в специальной медицинской группе";
+                }
+                if (oSumm >= -13 && oSumm < 6)
+                {
+                    if (diag == "Здоров")
+                    {
+                        return "Занятия ФК в подготовительной группе";
+                    }
+                    return "Занятия ФК в специальной медицинской группе";                   
+                }
+                if (oSumm >= 6 && oSumm < 13)
+                {
+                    if (diag == "Здоров")
+                    {
+                        return "Занятия ФК в основной группе";
+                    }
+                    return "В спецификации ваш случай не рассмотрен. ПОЗДРАВЛЯЮ, ВЫ - дивергент. Занятия ФК в специальной медицинской группе.";
+                }
+                // if (oSumm >= 13)
+                if (diag == "Здоров")
+                {
+                    return "Занятия ФК в основной группе";
+                }
+                return "Занятия ФК в подготовительной группе";
+
             } 
         }
 

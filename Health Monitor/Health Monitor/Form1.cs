@@ -64,6 +64,7 @@ namespace Health_Monitor
             Param.dynam = (double)inDyn.Value;
             Param.jump = (double)inJump.Value;
             Param.flexibility = (double)inFlex.Value;
+            Param.diag = (string)inDiag.Text;
 
             outPinj.Text = Param.oPinj.ToString();
             outKerd.Text = Param.oKerd.ToString();
@@ -80,8 +81,7 @@ namespace Health_Monitor
             outEcxs.Text = Param.oExcurcion.ToString();
             outHBF.Text = Param.hbf_idle.ToString();
             outFlex.Text = Param.flexibility.ToString();
-            
-            
+
             outSumm.Text = Param.oSumm.ToString();
             outConc.Text = Param.oConc.ToString();
 
