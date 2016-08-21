@@ -9,17 +9,18 @@ using System.Windows.Forms;
 
 namespace Health_Monitor
 {
-    public partial class Form1 : Form
+    public partial class AddDialog : Form
     {
-        public Form1()
+        private Person _param;
+        private MainWindow _base;
+        public AddDialog(MainWindow window)
         {
             InitializeComponent();
+            inDiag.SelectedIndex = 0;
+            _param = new Person();
+            _base = window;
         }
-        // Магия?
-        private void groupBox5_Enter(object sender, EventArgs e)
-        {
 
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -30,68 +31,74 @@ namespace Health_Monitor
         {
 
         }
+
+        private void Calculate()
+        {
+
+            _param.name = inFio.Text;
+
+            if (inMan.Checked == true)
+            {
+                _param.gender = 'м';
+            }
+            else
+            {
+                _param.gender = 'ж';
+            }
+
+            _param.age = (double)inAge.Value;
+            _param.volume = (double)inVolume.Value;
+            _param.time = (double)inTime.Value;
+            _param.hbf_idle = (double)inhbf_idle.Value;
+            _param.hbf_load = (double)inHbfload.Value;
+            _param.hbf_return = (double)inHbfreturn.Value;
+            _param.syst = (double)inSyst.Value;
+            _param.dyast = (double)inDyas.Value;
+            _param.lift = (double)inLift.Value;
+            _param.height = (double)inHeight.Value;
+            _param.weight = (double)inWeight.Value;
+            _param.circle = (double)inCirc.Value;
+            _param.circleFull = (double)inCircfull.Value;
+            _param.dynam = (double)inDyn.Value;
+            _param.jump = (double)inJump.Value;
+            _param.flexibility = (double)inFlex.Value;
+            _param.diag = (string)inDiag.Text;
+
+            outPinj.Text = _param.oPinj.ToString();
+            outKerd.Text = _param.oKerd.ToString();
+            outRoof.Text = _param.oRoof.ToString();
+            outShap.Text = _param.oShap.ToString();
+            outSkir.Text = _param.oSkir.ToString();
+            outFunc.Text = _param.oFunc.ToString();
+            outType.Text = _param.oType.ToString();
+            outSTR.Text = _param.oSTR.ToString();
+            outEcon.Text = _param.oEcon.ToString();
+            outJump.Text = _param.jump.ToString();
+            outDynm.Text = _param.dynam.ToString();
+
+            outEcxs.Text = _param.oExcurcion.ToString();
+            outHBF.Text = _param.hbf_idle.ToString();
+            outFlex.Text = _param.flexibility.ToString();
+
+            outSumm.Text = _param.oSumm.ToString();
+            outConc.Text = _param.oConc.ToString();
+
+        }
         
         // Производства рассчёта в форме.
         // Забор переменных из входных значений и рассчёт
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            Person Param = new Person();
-            
-            Param.name = inFio.Text;
-            
-            if(inMan.Checked == true)
-            {
-                Param.gender = 'м';
-            }
-            else
-            {
-                Param.gender = 'ж';
-            }
-
-            Param.age = (double)inAge.Value;
-            Param.volume = (double)inVolume.Value;
-            Param.time = (double)inTime.Value;
-            Param.hbf_idle = (double)inhbf_idle.Value;
-            Param.hbf_load = (double)inHbfload.Value;
-            Param.hbf_return = (double)inHbfreturn.Value;
-            Param.syst = (double)inSyst.Value;
-            Param.dyast = (double)inDyas.Value;
-            Param.lift = (double)inLift.Value;
-            Param.height = (double)inHeight.Value;
-            Param.weight = (double)inWeight.Value;
-            Param.circle = (double)inCirc.Value;
-            Param.circleFull = (double)inCircfull.Value;
-            Param.dynam = (double)inDyn.Value;
-            Param.jump = (double)inJump.Value;
-            Param.flexibility = (double)inFlex.Value;
-            Param.diag = (string)inDiag.Text;
-
-            outPinj.Text = Param.oPinj.ToString();
-            outKerd.Text = Param.oKerd.ToString();
-            outRoof.Text = Param.oRoof.ToString();
-            outShap.Text = Param.oShap.ToString();
-            outSkir.Text = Param.oSkir.ToString();
-            outFunc.Text = Param.oFunc.ToString();
-            outType.Text = Param.oType.ToString();
-            outSTR.Text = Param.oSTR.ToString();
-            outEcon.Text = Param.oEcon.ToString();
-            outJump.Text = Param.jump.ToString();
-            outDynm.Text = Param.dynam.ToString();
-
-            outEcxs.Text = Param.oExcurcion.ToString();
-            outHBF.Text = Param.hbf_idle.ToString();
-            outFlex.Text = Param.flexibility.ToString();
-
-            outSumm.Text = Param.oSumm.ToString();
-            outConc.Text = Param.oConc.ToString();
-
+            Calculate();
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.Show();
+            Calculate();
+            _base.Add(_param);
+            Close();
         }
+
 
     }
 }

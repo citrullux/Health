@@ -1,6 +1,6 @@
 ﻿namespace Health_Monitor
 {
-    partial class Form1
+    partial class AddDialog
     {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.inDiag = new System.Windows.Forms.ComboBox();
             this.inAge = new System.Windows.Forms.NumericUpDown();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.inCircfull = new System.Windows.Forms.NumericUpDown();
@@ -103,13 +105,10 @@
             this.outPinj = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCalc = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.outConc = new System.Windows.Forms.TextBox();
-            this.inDiag = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inAge)).BeginInit();
             this.groupBox9.SuspendLayout();
@@ -172,6 +171,31 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Входные параметры";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(410, 138);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(51, 13);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "Диагноз";
+            // 
+            // inDiag
+            // 
+            this.inDiag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.inDiag.FormattingEnabled = true;
+            this.inDiag.Items.AddRange(new object[] {
+            "Здоров",
+            "Дых",
+            "ЖКТ",
+            "ОДА",
+            "ССС"});
+            this.inDiag.Location = new System.Drawing.Point(365, 153);
+            this.inDiag.Name = "inDiag";
+            this.inDiag.Size = new System.Drawing.Size(141, 21);
+            this.inDiag.TabIndex = 27;
+            this.inDiag.Tag = "";
             // 
             // inAge
             // 
@@ -530,7 +554,6 @@
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Артериальное давление (мм.рт.ст)";
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // inDyas
             // 
@@ -1083,24 +1106,13 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.btnLoad);
             this.groupBox7.Controls.Add(this.btnSave);
             this.groupBox7.Controls.Add(this.btnCalc);
             this.groupBox7.Location = new System.Drawing.Point(843, 299);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(153, 111);
+            this.groupBox7.Size = new System.Drawing.Size(153, 83);
             this.groupBox7.TabIndex = 2;
             this.groupBox7.TabStop = false;
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(6, 77);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(137, 23);
-            this.btnLoad.TabIndex = 2;
-            this.btnLoad.Text = "Загрузить данные";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnSave
             // 
@@ -1110,6 +1122,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Сохранить данные";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCalc
             // 
@@ -1138,40 +1151,14 @@
             this.outConc.Multiline = true;
             this.outConc.Name = "outConc";
             this.outConc.ReadOnly = true;
-            this.outConc.Size = new System.Drawing.Size(821, 81);
+            this.outConc.Size = new System.Drawing.Size(821, 52);
             this.outConc.TabIndex = 26;
-            // 
-            // inDiag
-            // 
-            this.inDiag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.inDiag.FormattingEnabled = true;
-            this.inDiag.Items.AddRange(new object[] {
-            "Здоров",
-            "Дых",
-            "ЖКТ",
-            "ОДА",
-            "ССС"});
-            this.inDiag.Location = new System.Drawing.Point(365, 153);
-            this.inDiag.Name = "inDiag";
-            this.inDiag.Size = new System.Drawing.Size(141, 21);
-            this.inDiag.TabIndex = 27;
-            this.inDiag.Tag = "";
-            this.inDiag.SelectedIndex = 0; // здоров по умолчанию
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(410, 138);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 13);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "Диагноз";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 422);
+            this.ClientSize = new System.Drawing.Size(1008, 392);
             this.Controls.Add(this.outConc);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.groupBox7);
@@ -1289,7 +1276,6 @@
         private System.Windows.Forms.TextBox outPinj;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.Label label32;
