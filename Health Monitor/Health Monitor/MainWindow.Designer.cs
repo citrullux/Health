@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.btnExp = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnImp = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             // 
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.btnExp);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.btnImp);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
@@ -78,18 +78,18 @@
             this.btnExp.Name = "btnExp";
             this.btnExp.Size = new System.Drawing.Size(153, 23);
             this.btnExp.TabIndex = 4;
-            this.btnExp.Text = "Экпорт данных";
+            this.btnExp.Text = "Экспорт данных";
             this.btnExp.UseVisualStyleBackColor = true;
             this.btnExp.Click += new System.EventHandler(this.btnExp_Click);
             // 
-            // button4
+            // btnImp
             // 
-            this.button4.Location = new System.Drawing.Point(137, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(153, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Импорт данных";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnImp.Location = new System.Drawing.Point(137, 19);
+            this.btnImp.Name = "btnImp";
+            this.btnImp.Size = new System.Drawing.Size(153, 23);
+            this.btnImp.TabIndex = 3;
+            this.btnImp.Text = "Импорт данных";
+            this.btnImp.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
@@ -127,7 +127,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid);
             this.Name = "MainWindow";
-            this.Text = "Form2";
+            this.Text = "В специальную группу распределятус";
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -142,7 +142,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnExp;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnImp;
         private System.Windows.Forms.Button button6;
     }
 }
