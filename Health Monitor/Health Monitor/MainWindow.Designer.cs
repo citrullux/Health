@@ -30,47 +30,54 @@
         {
             this.grid = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnTable = new System.Windows.Forms.Button();
             this.btnExp = new System.Windows.Forms.Button();
             this.btnImp = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grid
             // 
+            this.grid.AllowUserToAddRows = false;
+            this.grid.AllowUserToDeleteRows = false;
             this.grid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Location = new System.Drawing.Point(12, 12);
+            this.grid.MultiSelect = false;
             this.grid.Name = "grid";
+            this.grid.ReadOnly = true;
+            this.grid.RowHeadersVisible = false;
+            this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(984, 425);
             this.grid.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.btnTable);
             this.groupBox1.Controls.Add(this.btnExp);
             this.groupBox1.Controls.Add(this.btnImp);
             this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnDel);
+            this.groupBox1.Controls.Add(this.btnChange);
             this.groupBox1.Location = new System.Drawing.Point(692, 443);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(304, 114);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // button6
+            // btnTable
             // 
-            this.button6.Location = new System.Drawing.Point(137, 77);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(153, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Диагностическая таблица";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnTable.Location = new System.Drawing.Point(137, 77);
+            this.btnTable.Name = "btnTable";
+            this.btnTable.Size = new System.Drawing.Size(153, 23);
+            this.btnTable.TabIndex = 5;
+            this.btnTable.Text = "Диагностическая таблица";
+            this.btnTable.UseVisualStyleBackColor = true;
+            this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
             // 
             // btnExp
             // 
@@ -90,6 +97,7 @@
             this.btnImp.TabIndex = 3;
             this.btnImp.Text = "Импорт данных";
             this.btnImp.UseVisualStyleBackColor = true;
+            this.btnImp.Click += new System.EventHandler(this.btnImp_Click);
             // 
             // btnAdd
             // 
@@ -101,23 +109,25 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button2
+            // btnDel
             // 
-            this.button2.Location = new System.Drawing.Point(6, 77);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Удалить запись";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDel.Location = new System.Drawing.Point(6, 77);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(122, 23);
+            this.btnDel.TabIndex = 1;
+            this.btnDel.Text = "Удалить запись";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
-            // button1
+            // btnChange
             // 
-            this.button1.Location = new System.Drawing.Point(6, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Изменить запись";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnChange.Location = new System.Drawing.Point(6, 48);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(122, 23);
+            this.btnChange.TabIndex = 0;
+            this.btnChange.Text = "Изменить запись";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // MainWindow
             // 
@@ -127,7 +137,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid);
             this.Name = "MainWindow";
-            this.Text = "В специальную группу распределятус";
+            this.Text = "Определение физкультурной группы";
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -139,10 +149,10 @@
         private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnExp;
         private System.Windows.Forms.Button btnImp;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnTable;
     }
 }

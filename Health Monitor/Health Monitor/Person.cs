@@ -8,7 +8,35 @@ namespace Health_Monitor
     public class Person
     {
         // Входные переменные
+        public Person () {
+            name = "Иванов Иван Иванович";
+            gender = 'м';
+            age = 16;
+            diag = "Здоров";
+            volume = 2500;
+            time = 30;
+            hbf_idle = 60;
+            hbf_load = 95;
+            hbf_return = 65;
+            syst = 120;
+            dyast = 70;
+            lift = 20;
+            height = 160;
+            weight = 50;
+            circle = 82;
+            circleFull = 85;
+            flexibility = 10;
+            jump = 160;
+            dynam = 15;
+        }
 
+        public Person Copy()
+        {
+            Person other = (Person)this.MemberwiseClone();
+            other.name = string.Copy(name);
+            other.diag = string.Copy(diag);
+            return other;
+        }
         [System.ComponentModel.DisplayName("ФИО")]
         public string name { get; set; }
         
