@@ -60,7 +60,7 @@ namespace Health_Monitor
             outSkir.Text = Person.oSkir.ToString();
             outFunc.Text = Person.oFunc.ToString();
             outType.Text = Person.oType.ToString();
-            outSTR.Text = Person.oSTR.ToString();
+            outSTR.Text = Person.oSTP.ToString();
             outEcon.Text = Person.oEcon.ToString();
             outJump.Text = Person.jump.ToString();
             outDynm.Text = Person.dynam.ToString();
@@ -116,7 +116,7 @@ namespace Health_Monitor
             outSkir.Text = Person.oSkir.ToString();
             outFunc.Text = Person.oFunc.ToString();
             outType.Text = Person.oType.ToString();
-            outSTR.Text = Person.oSTR.ToString();
+            outSTR.Text = Person.oSTP.ToString();
             outEcon.Text = Person.oEcon.ToString();
             outJump.Text = Person.jump.ToString();
             outDynm.Text = Person.dynam.ToString();

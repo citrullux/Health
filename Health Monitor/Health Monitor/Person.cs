@@ -5,6 +5,22 @@ using System.Text;
 
 namespace Health_Monitor
 {
+    // Много Enum для if-ов и выгрузки в таблицы
+    public enum Pinie { Strong = 2, Good = 5, Middle = 6, Weak = -2, Bad = -8 };
+    public enum Excurcion { High = 3, Middle = 2, Low = -4 };
+    public enum Skir { High = 9, HighMid = 8, Middle = 3, LowMid = -2, Low = -4 };
+    public enum Kerd { HVT = 1, VT = 9, Eit = 8, ST = -1, HST = -4 };
+    public enum Econ { Normal = 3, Low = -1, Stress = -3 };
+    public enum HBF { Brad = 1, Normal = 4, Tahy = -8 };
+    public enum STP { High = 7, HighMid = 4, Middle = 0, LowMid = -10, Low = -12 };
+    public enum Type { Hyper = -2, Eu = 2, Hypo = -6 };
+    public enum Func { Satisf = 2, Stress = -12, Frustr = -14 };
+    public enum Flex { High = 0, HighMid = 1, Middle = 8, LowMid = 2, Low = -8 };
+    public enum Shap { High = 11, HighMid = 8, Middle = 0, LowMid = -3, Low = -6 };
+    public enum Jump { High = 6, HighMid = 3, Middle = 2, LowMid = -1, Low = -2 };
+    public enum Roof { High = 3, HighMid = 1, Middle = 0, LowMid = -1, Low = -3 };
+    public enum Dynam { Satisf = 10, Frustr = -3 };
+
     public class Person
     {
         // Входные переменные
@@ -139,7 +155,7 @@ namespace Health_Monitor
         
         // Показатель двойного преломления
         [System.ComponentModel.DisplayName("Показатель двойного произведения")]
-        public double oSTR { get { return (hbf_idle*syst)/100;} }
+        public double oSTP { get { return (hbf_idle*syst)/100;} }
 
         // Рассчёт экономичности кровообращения
         [System.ComponentModel.DisplayName("Рассчёт экономичности кровообращения")]
@@ -154,20 +170,20 @@ namespace Health_Monitor
         { 
             get 
             {
-                return PinCalc(oPinj) 
-                     + ExcCalc(oExcurcion)
-                     + ScirbCalc(oSkir, gender)
-                     + KerdCalc(oKerd)
-                     + EconCalc(oEcon)
-                     + HBFCalc(hbf_idle, gender)
-                     + STRCalc(oSTR, gender)
-                     + TypeCalc(oType)
-                     + FuncCalc(oFunc)
-                     + FlexCalc(flexibility)
-                     + ShapCalc(oShap, gender)
-                     + JumpCalc(jump, gender)
-                     + RoofCalc(oRoof)
-                     + DynamCalc(dynam, gender);
+                return (int)PinCalc(oPinj) 
+                     + (int)ExcCalc(oExcurcion)
+                     + (int)ScirbCalc(oSkir, gender)
+                     + (int)KerdCalc(oKerd)
+                     + (int)EconCalc(oEcon)
+                     + (int)HBFCalc(hbf_idle, gender)
+                     + (int)STPCalc(oSTP, gender)
+                     + (int)TypeCalc(oType)
+                     + (int)FuncCalc(oFunc)
+                     + (int)FlexCalc(flexibility)
+                     + (int)ShapCalc(oShap, gender)
+                     + (int)JumpCalc(jump, gender)
+                     + (int)RoofCalc(oRoof)
+                     + (int)DynamCalc(dynam, gender);
             } 
         }
 
@@ -213,293 +229,286 @@ namespace Health_Monitor
 
         // Рассчёт диагностических коэффициэнтов
         // Индекс Пинье
-        public static int PinCalc(double pin)
+        public static Pinie PinCalc(double pin)
         {
 
             if (pin <= 10)
-                return 2;
+                return Pinie.Strong;
             if (pin > 10 && pin <= 20)
-                return 5;
+                return Pinie.Good;
             if (pin > 20 && pin <= 25)
-                return 6;
+                return Pinie.Middle;
             if (pin > 25 && pin <= 36)
-                return -2;
+                return Pinie.Weak;
             //if (pin > 36)
-                return -8;
+                return Pinie.Bad;
 
         }
 
         // Рассчёт диагностических коэффициэнтов
         // Экскурсия грудной клетки
-        public static int ExcCalc(double pin)
+        public static Excurcion ExcCalc(double pin)
         {
             
             if (pin < 5)
-                return -4;
+                return Excurcion.Low;
             if (pin >= 5 && pin <= 9)
-                return 2;
+                return Excurcion.Middle;
             //if (pin > 9)
-                return 3;
+                return Excurcion.High;
 
         }
 
 
         // Рассчёт диагностических коэффициэнтов
         // Индекс Скирбинского
-        public static int ScirbCalc(double pin, char ch)
+        public static Skir ScirbCalc(double pin, char ch)
         {
             
             if (ch == 'м')
             {
                 if (pin <= 1147)
-                    return -4;
+                    return Skir.Low;
                 if (pin > 1147 && pin <= 1407)
-                    return -2;
+                    return Skir.LowMid;
                 if (pin > 1407 && pin <= 1940)
-                    return 3;
+                    return Skir.Middle;
                 if (pin > 1940 && pin <= 2206)
-                    return 8;
+                    return Skir.HighMid;
                 if (pin > 2207)
-                    return 9;
+                    return Skir.High;
             }
 
             if (pin <= 865)
-                return -4;
+                return Skir.Low;
             if (pin > 865 && pin <= 1010)
-                return -2;
+                return Skir.LowMid;
             if (pin > 1010 && pin <= 1501)
-                return 3;
+                return Skir.Middle;
             if (pin > 1501 && pin <= 1746)
-                return 8;
+                return Skir.HighMid;
             //if (pin > 1746)
-                return 9;
+                return Skir.High;
 
         }
 
         // Рассчёт диагностических коэффициэнтов
         // Индекс Кердо
-        public static int KerdCalc(double pin)
+        public static Kerd KerdCalc(double pin)
         {
-            
             if (pin <= -15)
-                return 1;
+                return Kerd.HVT;
             if (pin > -15 && pin <= -8)
-                return 9;
+                return Kerd.VT;
             if (pin > -8 && pin <= 5)
-                return 8;
+                return Kerd.Eit;
             if (pin > 5 && pin <= 14)
-                return -1;
+                return Kerd.ST;
             // if (pin > 14)
-                return -4;
-            
+                return Kerd.HST;   
         }
 
         // Рассчёт диагностических коэффициэнтов
         // Экономичность кровообращения
-        public static int EconCalc(double pin)
+        public static Econ EconCalc(double pin)
         {
-            
             if (pin < 2500)
-                return -1;
+                return Econ.Low;
             if (pin >= 2500 && pin <= 3000)
-                return 3;
+                return Econ.Normal;
             // if (pin > 3000)
-                return -3;
-            
+                return Econ.Stress;
         }
 
 
         // Рассчёт диагностических коэффициэнтов
         // ЧСС
-        public static int HBFCalc(double pin, char ch)
+        public static HBF HBFCalc(double pin, char ch)
         {
-            
             if (ch == 'м')
             {
                 if (pin <= 70)
-                    return 1;
+                    return HBF.Brad;
                 if (pin > 70 && pin <= 80)
-                    return 4;
+                    return HBF.Normal;
                 //if (pin > 80)
-                    return -8;
+                    return HBF.Tahy;
             }
 
             if (pin <= 55)
-                return 1;
+                return HBF.Brad;
             if (pin > 55 && pin <= 102)
-                return 4;
+                return HBF.Normal;
             //if (pin > 102)
-                return -8;         
-            
+                return HBF.Tahy;         
         }
 
 
         // Рассчёт диагностических коэффициэнтов
         // Показатель двойного произведения
-        private static int STRCalc(double pin, char gender)
+        private static STP STPCalc(double pin, char gender)
         {
-
             if (gender == 'м')
             {
                 if (pin <= 70)
-                    return 7;
+                    return STP.High;
                 if (pin > 70 && pin <= 78)
-                    return 4;
+                    return STP.HighMid;
                 if (pin > 78 && pin <= 108)
-                    return 0;
+                    return STP.Middle;
                 if (pin > 108 && pin <= 114)
-                    return -10;
+                    return STP.LowMid;
                 if (pin > 114)
-                    return -12;
+                    return STP.Low;
             }
 
             if (pin <= 70)
-                return 7;
+                return STP.High;
             if (pin > 70 && pin <= 78)
-                return 4;
+                return STP.HighMid;
             if (pin > 78 && pin <= 106)
-                return 0;
+                return STP.Middle;
             if (pin > 106 && pin <= 114)
-                return -10;
+                return STP.LowMid;
             //if (pin > 114)
-                return -12;
+                return STP.Low;
         }
 
         // Рассчёт диагностических коэффициэнтов
         // Тип кровообращения
-        public static int TypeCalc(double pin)
+        public static Type TypeCalc(double pin)
         {
             if (pin < 32)
-                return -6;
+                return Type.Hypo;
             if (pin >= 32 && pin <= 47)
-                return 2;
+                return Type.Eu;
             //if (pin > 47)
-                return -2;
+                return Type.Hyper;
         }
 
         // Рассчёт диагностических коэффициэнтов
         // Индекс функциональных изменений
-        public static int FuncCalc(double pin)
+        public static Func FuncCalc(double pin)
         {
             if (pin < 2.59)
-                return 2;
+                return Func.Satisf;
             if (pin >= 2.59 && pin <= 3.09)
-                return -12;
-            //if (pin > 47)
-            return -14;
+                return Func.Stress;
+            //if (pin > 3.09)
+            return Func.Frustr;
         }
 
         // Рассчёт диагностических коэффициэнтов
         // Гибкость
-        public static int FlexCalc(double pin)
+        public static Flex FlexCalc(double pin)
         {
             if (pin <= -5)
-                return -8;
+                return Flex.Low;
             if (pin > -5 && pin <= -1)
-                return 2;
+                return Flex.LowMid;
             if (pin > -1 && pin <= 5)
-                return 8;
+                return Flex.Middle;
             if (pin > 5 && pin <= 9)
-                return 1;
+                return Flex.HighMid;
             // if (pin > 9)
-            return 0;
+            return Flex.High;
         }
 
         // Рассчёт диагностических коэффициэнтов
         // Индекс Шаповаловой
-        private static int ShapCalc(double pin, char gender)
+        private static Shap ShapCalc(double pin, char gender)
         {
 
             if (gender == 'м')
             {
                 if (pin <= 128)
-                    return -6;
+                    return Shap.Low;
                 if (pin > 128 && pin <= 157)
-                    return -3;
+                    return Shap.LowMid;
                 if (pin > 158 && pin <= 217)
-                    return 0;
+                    return Shap.Middle;
                 if (pin > 217 && pin <= 246)
-                    return 8;
+                    return Shap.HighMid;
                 if (pin > 246)
-                    return 11;
+                    return Shap.High;
             }
 
             if (pin <= 193)
-                return -6;
+                return Shap.Low;
             if (pin > 193 && pin <= 216)
-                return -3;
+                return Shap.LowMid;
             if (pin > 216 && pin <= 253)
-                return 0;
+                return Shap.Middle;
             if (pin > 253 && pin <= 276)
-                return 8;
+                return Shap.HighMid;
             //if (pin > 276)
-            return 11;
+            return Shap.High;
         }
 
 
         // Рассчёт диагностических коэффициэнтов
         // Прыжок
-        private static int JumpCalc(double pin, char gender)
+        private static Jump JumpCalc(double pin, char gender)
         {
 
             if (gender == 'м')
             {
                 if (pin <= 170)
-                    return -2;
+                    return Jump.Low;
                 if (pin > 170 && pin <= 187)
-                    return -1;
+                    return Jump.LowMid;
                 if (pin > 187 && pin <= 199)
-                    return 2;
+                    return Jump.Middle;
                 if (pin > 199 && pin <= 209)
-                    return 3;
+                    return Jump.HighMid;
                 if (pin > 209)
-                    return 6;
+                    return Jump.High;
             }
 
             if (pin <= 150)
-                return -2;
+                return Jump.Low;
             if (pin > 150 && pin <= 168)
-                return -1;
+                return Jump.LowMid;
             if (pin > 168 && pin <= 181)
-                return 2;
+                return Jump.Middle;
             if (pin > 181 && pin <= 194)
-                return 3;
+                return Jump.HighMid;
             //if (pin > 194)
-            return 6;
+            return Jump.High;
         }
         
         // Рассчёт диагностических коэффициэнтов
         // Индекс Руфье
-        public static int RoofCalc(double pin)
+        public static Roof RoofCalc(double pin)
         {
             if (pin <= 6.5)
-                return 3;
+                return Roof.High;
             if (pin > 6.5 && pin <= 9.4)
-                return 1;
+                return Roof.HighMid;
             if (pin > 9.4 && pin <= 11.4)
-                return 0;
+                return Roof.Middle;
             if (pin > 11.4 && pin <= 16.4)
-                return -1;
+                return Roof.LowMid;
             // if (pin > 9)
-            return -3;
+            return Roof.Low;
         }
 
         // Рассчёт диагностических коэффициэнтов
         // Кистевая Динамометрия
-        public static int DynamCalc(double pin, char gender)
+        public static Dynam DynamCalc(double pin, char gender)
         {
             if (gender == 'м')
             {
                 if (pin <= 26.5)
-                    return -3;
+                    return Dynam.Frustr;
                 if (pin > 26.5)
-                    return 10;
+                    return Dynam.Satisf;
             }
 
             if (pin <= 23.5)
-                return -3;
+                return Dynam.Frustr;
             //if (pin > 23.5)
-            return 10;
+            return Dynam.Satisf;
         }
 
 

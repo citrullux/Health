@@ -109,7 +109,7 @@ namespace Health_Monitor
                     sr.Write(p.oSkir + "; ");
                     sr.Write(p.oFunc + "; ");
                     sr.Write(p.oType + "; ");
-                    sr.Write(p.oSTR + "; ");
+                    sr.Write(p.oSTP + "; ");
                     sr.Write(p.oEcon + "; ");
                     sr.Write(p.oSumm + "; ");
                     sr.Write(p.oConc + "; ");
@@ -180,7 +180,13 @@ namespace Health_Monitor
 
         private void btnTable_Click(object sender, EventArgs e)
         {
+            int[] NA = new int[6];
+            int[] NB = new int[6];
 
+            foreach(Person p in list)
+            {
+
+            }
         }
     }
 }
