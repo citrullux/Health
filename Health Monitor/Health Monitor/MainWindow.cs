@@ -178,7 +178,7 @@ namespace Health_Monitor
             list.RemoveAt(ind);
         }
 
-        private string format_line(Func<Person, bool> predicate, out double j) {
+        private string format_line(Func<Person, bool> predicate, int num, out double j) {
             double all = list.Count();
             var l = list.Where(predicate);
             var n = l.Count();
@@ -186,8 +186,8 @@ namespace Health_Monitor
             double all_b = all - all_a;
             var na = l.Where(p => p.diag == "Здоров").Count();
             var nb = n - na;
-            var pa = na / all_a;
-            var pb = nb / all_b;
+            var pa = (na+1) / (all_a + num);
+            var pb = (nb+1) / (all_b + num);
             var dk = 10 * Math.Log10(pa / pb);
             j = dk * (pa - pb) / 2;
             return na + "; " + nb + "; " + (100*pa) + "; " + (100*pb) + "; " + (pa-pb) + "; " + (pa/pb) + "; " + dk + "; " + j + "; ";
@@ -227,23 +227,23 @@ namespace Health_Monitor
                 sr.Write(";Телосложение (Индекс Пинье)");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Strong, out J[0]);
+                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Strong, J.Length, out J[0]);
                 sr.Write("1; крепкое; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Good, out J[1]);
+                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Good, J.Length, out J[1]);
                 sr.Write("2; хорошее; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Middle, out J[2]);
+                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Middle, J.Length, out J[2]);
                 sr.Write("3; среднее; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Weak, out J[3]);
+                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Weak, J.Length, out J[3]);
                 sr.Write("4; слабое; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Bad, out J[4]);
+                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Bad, J.Length, out J[4]);
                 sr.Write("5; очень слабое; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -255,15 +255,15 @@ namespace Health_Monitor
                 sr.Write(";Экскурсия грудной клетки");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ExcCalc(p.oExcurcion) == Excurcion.High, out J[0]);
+                line = format_line(p => Person.ExcCalc(p.oExcurcion) == Excurcion.High, J.Length, out J[0]);
                 sr.Write("1; высокая; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ExcCalc(p.oExcurcion) == Excurcion.Middle, out J[1]);
+                line = format_line(p => Person.ExcCalc(p.oExcurcion) == Excurcion.Middle, J.Length, out J[1]);
                 sr.Write("2; средняя; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ExcCalc(p.oExcurcion) == Excurcion.Low, out J[2]);
+                line = format_line(p => Person.ExcCalc(p.oExcurcion) == Excurcion.Low, J.Length, out J[2]);
                 sr.Write("3; низкая; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -275,23 +275,23 @@ namespace Health_Monitor
                 sr.Write(";Индекс Скибинского");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.High, out J[0]);
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.HighMid, out J[1]);
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.Middle, out J[2]);
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.LowMid, out J[3]);
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.Low, out J[4]);
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -303,23 +303,23 @@ namespace Health_Monitor
                 sr.Write(";Вегетативный индекс Кердо");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.HVT, out J[0]);
+                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.HVT, J.Length, out J[0]);
                 sr.Write("1; выраженная ВТ; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.VT, out J[1]);
+                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.VT, J.Length, out J[1]);
                 sr.Write("2; умеренная ВТ; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.Eit, out J[2]);
+                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.Eit, J.Length, out J[2]);
                 sr.Write("3; эйтония; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.ST, out J[3]);
+                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.ST, J.Length, out J[3]);
                 sr.Write("4; умеренная СТ; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.HST, out J[4]);
+                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.HST, J.Length, out J[4]);
                 sr.Write("5; выраженная СТ; " + line);
                 
                 sr.Write(Environment.NewLine);
@@ -331,15 +331,15 @@ namespace Health_Monitor
                 sr.Write(";Экономичность кровообращения (коэффициент)");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.EconCalc(p.oEcon) == Econ.Normal, out J[0]);
+                line = format_line(p => Person.EconCalc(p.oEcon) == Econ.Normal, J.Length, out J[0]);
                 sr.Write("1; нормальная; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.EconCalc(p.oEcon) == Econ.Low, out J[1]);
+                line = format_line(p => Person.EconCalc(p.oEcon) == Econ.Low, J.Length, out J[1]);
                 sr.Write("2; снижение; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.EconCalc(p.oEcon) == Econ.Stress, out J[2]);
+                line = format_line(p => Person.EconCalc(p.oEcon) == Econ.Stress, J.Length, out J[2]);
                 sr.Write("3; напряжение; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -351,15 +351,15 @@ namespace Health_Monitor
                 sr.Write(";Частота сердечных сокращений");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender) == HBF.Brad, out J[0]);
+                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender) == HBF.Brad, J.Length, out J[0]);
                 sr.Write("1; брадикальная; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender) == HBF.Normal, out J[0]);
+                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender) == HBF.Normal, J.Length, out J[0]);
                 sr.Write("2; нормальная; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender) == HBF.Tahy, out J[0]);
+                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender) == HBF.Tahy, J.Length, out J[0]);
                 sr.Write("3; тахикардия; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -371,23 +371,23 @@ namespace Health_Monitor
                 sr.Write(";Показатель двойного произведения");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.High, out J[0]);
+                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.HighMid, out J[1]);
+                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.Middle, out J[2]);
+                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.LowMid, out J[3]);
+                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.Low, out J[4]);
+                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -399,15 +399,15 @@ namespace Health_Monitor
                 sr.Write(";Типы кровообращения");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.TypeCalc(p.oType) == Type.Hyper, out J[0]);
+                line = format_line(p => Person.TypeCalc(p.oType) == Type.Hyper, J.Length, out J[0]);
                 sr.Write("1; гиперкинетический; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.TypeCalc(p.oType) == Type.Eu, out J[1]);
+                line = format_line(p => Person.TypeCalc(p.oType) == Type.Eu, J.Length, out J[1]);
                 sr.Write("2; эукинетический; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.TypeCalc(p.oType) == Type.Hypo, out J[2]);
+                line = format_line(p => Person.TypeCalc(p.oType) == Type.Hypo, J.Length, out J[2]);
                 sr.Write("3; гипокинетический; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -419,15 +419,15 @@ namespace Health_Monitor
                 sr.Write(";Индекс функциональных изменений");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FuncCalc(p.oFunc) == Func.Satisf, out J[0]);
+                line = format_line(p => Person.FuncCalc(p.oFunc) == Func.Satisf, J.Length, out J[0]);
                 sr.Write("1; удовлетв. адапт.; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FuncCalc(p.oFunc) == Func.Stress, out J[1]);
+                line = format_line(p => Person.FuncCalc(p.oFunc) == Func.Stress, J.Length, out J[1]);
                 sr.Write("2; напряжение; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FuncCalc(p.oFunc) == Func.Frustr, out J[2]);
+                line = format_line(p => Person.FuncCalc(p.oFunc) == Func.Frustr, J.Length, out J[2]);
                 sr.Write("3; неудовлетворит.; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -439,23 +439,23 @@ namespace Health_Monitor
                 sr.Write("; Гибкость");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.High, out J[0]);
+                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.HighMid, out J[1]);
+                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.Middle, out J[2]);
+                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.LowMid, out J[3]);
+                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.Low, out J[4]);
+                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -467,23 +467,23 @@ namespace Health_Monitor
                 sr.Write("; Индекс Шаповаловой");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.High, out J[0]);
+                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.HighMid, out J[1]);
+                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.Middle, out J[2]);
+                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.LowMid, out J[3]);
+                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.Low, out J[4]);
+                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -495,23 +495,23 @@ namespace Health_Monitor
                 sr.Write("; Прыжок в длину");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.High, out J[0]);
+                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.HighMid, out J[1]);
+                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.Middle, out J[2]);
+                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.LowMid, out J[3]);
+                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.Low, out J[4]);
+                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -523,23 +523,23 @@ namespace Health_Monitor
                 sr.Write("; Индекс Руфье");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.High, out J[0]);
+                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.HighMid, out J[1]);
+                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.Middle, out J[2]);
+                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.LowMid, out J[3]);
+                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.Low, out J[4]);
+                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -552,11 +552,11 @@ namespace Health_Monitor
                 sr.Write("; Кистевая динамометрия");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.DynamCalc(p.dynam, p.gender) == Dynam.Satisf, out J[0]);
+                line = format_line(p => Person.DynamCalc(p.dynam, p.gender) == Dynam.Satisf, J.Length, out J[0]);
                 sr.Write("1; удовлетворительно; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.DynamCalc(p.dynam, p.gender) == Dynam.Frustr, out J[1]);
+                line = format_line(p => Person.DynamCalc(p.dynam, p.gender) == Dynam.Frustr, J.Length, out J[1]);
                 sr.Write("2; неудовлетворительно; " + line);
                 sr.Write(Environment.NewLine);
 

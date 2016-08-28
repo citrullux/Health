@@ -813,14 +813,14 @@
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(83, 161);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(137, 13);
+            this.label28.Size = new System.Drawing.Size(142, 13);
             this.label28.TabIndex = 19;
-            this.label28.Text = "Экскрсия грудной клетки";
+            this.label28.Text = "Экскурсия грудной клетки";
             // 
             // outSumm
             // 
-            this.outSumm.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outSumm.ForeColor = System.Drawing.SystemColors.Info;
+            this.outSumm.BackColor = System.Drawing.SystemColors.Window;
+            this.outSumm.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outSumm.Location = new System.Drawing.Point(400, 255);
             this.outSumm.Name = "outSumm";
             this.outSumm.ReadOnly = true;
@@ -829,8 +829,8 @@
             // 
             // outDynm
             // 
-            this.outDynm.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outDynm.ForeColor = System.Drawing.SystemColors.Info;
+            this.outDynm.BackColor = System.Drawing.SystemColors.Window;
+            this.outDynm.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outDynm.Location = new System.Drawing.Point(17, 211);
             this.outDynm.Name = "outDynm";
             this.outDynm.ReadOnly = true;
@@ -839,8 +839,8 @@
             // 
             // outJump
             // 
-            this.outJump.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outJump.ForeColor = System.Drawing.SystemColors.Info;
+            this.outJump.BackColor = System.Drawing.SystemColors.Window;
+            this.outJump.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outJump.Location = new System.Drawing.Point(17, 185);
             this.outJump.Name = "outJump";
             this.outJump.ReadOnly = true;
@@ -849,8 +849,8 @@
             // 
             // outEcxs
             // 
-            this.outEcxs.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outEcxs.ForeColor = System.Drawing.SystemColors.Info;
+            this.outEcxs.BackColor = System.Drawing.SystemColors.Window;
+            this.outEcxs.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outEcxs.Location = new System.Drawing.Point(17, 158);
             this.outEcxs.Name = "outEcxs";
             this.outEcxs.ReadOnly = true;
@@ -868,8 +868,8 @@
             // 
             // outFlex
             // 
-            this.outFlex.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outFlex.ForeColor = System.Drawing.SystemColors.Info;
+            this.outFlex.BackColor = System.Drawing.SystemColors.Window;
+            this.outFlex.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outFlex.Location = new System.Drawing.Point(350, 120);
             this.outFlex.Name = "outFlex";
             this.outFlex.ReadOnly = true;
@@ -922,8 +922,8 @@
             // 
             // outEcon
             // 
-            this.outEcon.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outEcon.ForeColor = System.Drawing.SystemColors.Info;
+            this.outEcon.BackColor = System.Drawing.SystemColors.Window;
+            this.outEcon.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outEcon.Location = new System.Drawing.Point(221, 34);
             this.outEcon.Name = "outEcon";
             this.outEcon.ReadOnly = true;
@@ -932,8 +932,8 @@
             // 
             // outSTR
             // 
-            this.outSTR.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outSTR.ForeColor = System.Drawing.SystemColors.Info;
+            this.outSTR.BackColor = System.Drawing.SystemColors.Window;
+            this.outSTR.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outSTR.Location = new System.Drawing.Point(142, 34);
             this.outSTR.Name = "outSTR";
             this.outSTR.ReadOnly = true;
@@ -942,8 +942,8 @@
             // 
             // outHBF
             // 
-            this.outHBF.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outHBF.ForeColor = System.Drawing.SystemColors.Info;
+            this.outHBF.BackColor = System.Drawing.SystemColors.Window;
+            this.outHBF.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outHBF.Location = new System.Drawing.Point(76, 34);
             this.outHBF.Name = "outHBF";
             this.outHBF.ReadOnly = true;
@@ -952,8 +952,8 @@
             // 
             // outType
             // 
-            this.outType.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outType.ForeColor = System.Drawing.SystemColors.Info;
+            this.outType.BackColor = System.Drawing.SystemColors.Window;
+            this.outType.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outType.Location = new System.Drawing.Point(10, 34);
             this.outType.Name = "outType";
             this.outType.ReadOnly = true;
@@ -992,8 +992,8 @@
             // 
             // outFunc
             // 
-            this.outFunc.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outFunc.ForeColor = System.Drawing.SystemColors.Info;
+            this.outFunc.BackColor = System.Drawing.SystemColors.Window;
+            this.outFunc.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outFunc.Location = new System.Drawing.Point(376, 32);
             this.outFunc.Name = "outFunc";
             this.outFunc.ReadOnly = true;
@@ -1047,8 +1047,8 @@
             // 
             // outSkir
             // 
-            this.outSkir.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outSkir.ForeColor = System.Drawing.SystemColors.Info;
+            this.outSkir.BackColor = System.Drawing.SystemColors.Window;
+            this.outSkir.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outSkir.Location = new System.Drawing.Point(295, 32);
             this.outSkir.Name = "outSkir";
             this.outSkir.ReadOnly = true;
@@ -1057,8 +1057,8 @@
             // 
             // outShap
             // 
-            this.outShap.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outShap.ForeColor = System.Drawing.SystemColors.Info;
+            this.outShap.BackColor = System.Drawing.SystemColors.Window;
+            this.outShap.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outShap.Location = new System.Drawing.Point(212, 32);
             this.outShap.Name = "outShap";
             this.outShap.ReadOnly = true;
@@ -1067,8 +1067,8 @@
             // 
             // outRoof
             // 
-            this.outRoof.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outRoof.ForeColor = System.Drawing.SystemColors.Info;
+            this.outRoof.BackColor = System.Drawing.SystemColors.Window;
+            this.outRoof.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outRoof.Location = new System.Drawing.Point(142, 32);
             this.outRoof.Name = "outRoof";
             this.outRoof.ReadOnly = true;
@@ -1077,8 +1077,8 @@
             // 
             // outKerd
             // 
-            this.outKerd.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outKerd.ForeColor = System.Drawing.SystemColors.Info;
+            this.outKerd.BackColor = System.Drawing.SystemColors.Window;
+            this.outKerd.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outKerd.Location = new System.Drawing.Point(76, 32);
             this.outKerd.Name = "outKerd";
             this.outKerd.ReadOnly = true;
@@ -1087,8 +1087,8 @@
             // 
             // outPinj
             // 
-            this.outPinj.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outPinj.ForeColor = System.Drawing.SystemColors.Info;
+            this.outPinj.BackColor = System.Drawing.SystemColors.Window;
+            this.outPinj.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outPinj.Location = new System.Drawing.Point(10, 32);
             this.outPinj.Name = "outPinj";
             this.outPinj.ReadOnly = true;
@@ -1145,8 +1145,8 @@
             // 
             // outConc
             // 
-            this.outConc.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.outConc.ForeColor = System.Drawing.SystemColors.Info;
+            this.outConc.BackColor = System.Drawing.SystemColors.Window;
+            this.outConc.ForeColor = System.Drawing.SystemColors.WindowText;
             this.outConc.Location = new System.Drawing.Point(12, 318);
             this.outConc.Multiline = true;
             this.outConc.Name = "outConc";
@@ -1154,7 +1154,7 @@
             this.outConc.Size = new System.Drawing.Size(821, 52);
             this.outConc.TabIndex = 26;
             // 
-            // Form1
+            // AddDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1164,8 +1164,8 @@
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "Рассчёт параметров";
+            this.Name = "AddDialog";
+            this.Text = "Расчёт параметров";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
