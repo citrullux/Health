@@ -178,15 +178,392 @@ namespace Health_Monitor
             list.RemoveAt(ind);
         }
 
+        private string format_line(Func<Person, bool> predicate, out double j) {
+            double all = list.Count();
+            var l = list.Where(predicate);
+            var n = l.Count();
+            double all_a = list.Where(p => p.diag == "Здоров").Count();
+            double all_b = all - all_a;
+            var na = l.Where(p => p.diag == "Здоров").Count();
+            var nb = n - na;
+            var pa = na / all_a;
+            var pb = nb / all_b;
+            var dk = 10 * Math.Log10(pa / pb);
+            j = dk * (pa - pb) / 2;
+            return na + "; " + nb + "; " + (100*pa) + "; " + (100*pb) + "; " + (pa-pb) + "; " + (pa/pb) + "; " + dk + "; " + j + "; ";
+        }
+
+        private string summ_line(double j)
+        {
+            double all = list.Count();
+            double all_a = list.Where(p => p.diag == "Здоров").Count();
+            var all_b = all - all_a;
+            return "; сумма; " + all_a + "; " + all_b + "; " + "100" + "; " + "100" + "; ; ; ; " + j + "; "; ;
+        }
+
         private void btnTable_Click(object sender, EventArgs e)
         {
-            int[] NA = new int[6];
-            int[] NB = new int[6];
-
-            foreach(Person p in list)
+            var dialog = new SaveFileDialog();
+            var fname = "data.csv";
+            dialog.DefaultExt = "csv";
+            dialog.Filter = "CSV (*.csv)|*.csv|All files (*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-
+                fname = dialog.FileName;
             }
+
+            if (list.Count == 0) { return; }
+
+            double[] J;
+            string line;
+            
+            using (StreamWriter sr = new StreamWriter(fname, false, Encoding.GetEncoding(1251)))
+            {
+                sr.Write("№; Признаки и градации; N(xi/A); N(xi/B); P(xi/A); P(xi/B); Разности частностей; Отношения частностей; ДК; Информативность");
+                sr.Write(Environment.NewLine);
+
+                J = new double[5];
+
+                sr.Write(";Телосложение (Индекс Пинье)");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Strong, out J[0]);
+                sr.Write("1; крепкое; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Good, out J[1]);
+                sr.Write("2; хорошее; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Middle, out J[2]);
+                sr.Write("3; среднее; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Weak, out J[3]);
+                sr.Write("4; слабое; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.PinCalc(p.oPinj) == Pinie.Bad, out J[4]);
+                sr.Write("5; очень слабое; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[3];
+
+                sr.Write(";Экскурсия грудной клетки");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ExcCalc(p.oExcurcion) == Excurcion.High, out J[0]);
+                sr.Write("1; высокая; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ExcCalc(p.oExcurcion) == Excurcion.Middle, out J[1]);
+                sr.Write("2; средняя; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ExcCalc(p.oExcurcion) == Excurcion.Low, out J[2]);
+                sr.Write("3; низкая; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[5];
+
+                sr.Write(";Индекс Скибинского");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.High, out J[0]);
+                sr.Write("1; высокий; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.HighMid, out J[1]);
+                sr.Write("2; выше среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.Middle, out J[2]);
+                sr.Write("3; средний; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.LowMid, out J[3]);
+                sr.Write("4; ниже среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender) == Skir.Low, out J[4]);
+                sr.Write("5; низкий; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[5];
+
+                sr.Write(";Вегетативный индекс Кердо");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.HVT, out J[0]);
+                sr.Write("1; выраженная ВТ; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.VT, out J[1]);
+                sr.Write("2; умеренная ВТ; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.Eit, out J[2]);
+                sr.Write("3; эйтония; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.ST, out J[3]);
+                sr.Write("4; умеренная СТ; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.KerdCalc(p.oKerd) == Kerd.HST, out J[4]);
+                sr.Write("5; выраженная СТ; " + line);
+                
+                sr.Write(Environment.NewLine);
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[3];
+
+                sr.Write(";Экономичность кровообращения (коэффициент)");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.EconCalc(p.oEcon) == Econ.Normal, out J[0]);
+                sr.Write("1; нормальная; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.EconCalc(p.oEcon) == Econ.Low, out J[1]);
+                sr.Write("2; снижение; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.EconCalc(p.oEcon) == Econ.Stress, out J[2]);
+                sr.Write("3; напряжение; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[3];
+
+                sr.Write(";Частота сердечных сокращений");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender) == HBF.Brad, out J[0]);
+                sr.Write("1; брадикальная; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender) == HBF.Normal, out J[0]);
+                sr.Write("2; нормальная; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender) == HBF.Tahy, out J[0]);
+                sr.Write("3; тахикардия; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[5];
+
+                sr.Write(";Показатель двойного произведения");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.High, out J[0]);
+                sr.Write("1; высокий; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.HighMid, out J[1]);
+                sr.Write("2; выше среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.Middle, out J[2]);
+                sr.Write("3; средний; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.LowMid, out J[3]);
+                sr.Write("4; ниже среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.STPCalc(p.oSTP, p.gender) == STP.Low, out J[4]);
+                sr.Write("5; низкий; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[3];
+
+                sr.Write(";Типы кровообращения");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.TypeCalc(p.oType) == Type.Hyper, out J[0]);
+                sr.Write("1; гиперкинетический; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.TypeCalc(p.oType) == Type.Eu, out J[1]);
+                sr.Write("2; эукинетический; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.TypeCalc(p.oType) == Type.Hypo, out J[2]);
+                sr.Write("3; гипокинетический; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[3];
+
+                sr.Write(";Индекс функциональных изменений");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.FuncCalc(p.oFunc) == Func.Satisf, out J[0]);
+                sr.Write("1; удовлетв. адапт.; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.FuncCalc(p.oFunc) == Func.Stress, out J[1]);
+                sr.Write("2; напряжение; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.FuncCalc(p.oFunc) == Func.Frustr, out J[2]);
+                sr.Write("3; неудовлетворит.; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[5];
+
+                sr.Write("; Гибкость");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.High, out J[0]);
+                sr.Write("1; высокий; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.HighMid, out J[1]);
+                sr.Write("2; выше среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.Middle, out J[2]);
+                sr.Write("3; средний; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.LowMid, out J[3]);
+                sr.Write("4; ниже среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.Low, out J[4]);
+                sr.Write("5; низкий; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[5];
+
+                sr.Write("; Индекс Шаповаловой");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.High, out J[0]);
+                sr.Write("1; высокий; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.HighMid, out J[1]);
+                sr.Write("2; выше среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.Middle, out J[2]);
+                sr.Write("3; средний; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.LowMid, out J[3]);
+                sr.Write("4; ниже среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.ShapCalc(p.oShap, p.gender) == Shap.Low, out J[4]);
+                sr.Write("5; низкий; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[5];
+
+                sr.Write("; Прыжок в длину");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.High, out J[0]);
+                sr.Write("1; высокий; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.HighMid, out J[1]);
+                sr.Write("2; выше среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.Middle, out J[2]);
+                sr.Write("3; средний; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.LowMid, out J[3]);
+                sr.Write("4; ниже среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.JumpCalc(p.jump, p.gender) == Jump.Low, out J[4]);
+                sr.Write("5; низкий; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+                J = new double[5];
+
+                sr.Write("; Индекс Руфье");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.High, out J[0]);
+                sr.Write("1; высокий; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.HighMid, out J[1]);
+                sr.Write("2; выше среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.Middle, out J[2]);
+                sr.Write("3; средний; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.LowMid, out J[3]);
+                sr.Write("4; ниже среднего; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.RoofCalc(p.oRoof) == Roof.Low, out J[4]);
+                sr.Write("5; низкий; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+
+
+                J = new double[5];
+
+                sr.Write("; Кистевая динамометрия");
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.DynamCalc(p.dynam, p.gender) == Dynam.Satisf, out J[0]);
+                sr.Write("1; удовлетворительно; " + line);
+                sr.Write(Environment.NewLine);
+
+                line = format_line(p => Person.DynamCalc(p.dynam, p.gender) == Dynam.Frustr, out J[1]);
+                sr.Write("2; неудовлетворительно; " + line);
+                sr.Write(Environment.NewLine);
+
+                sr.Write(summ_line(J.Sum()));
+                sr.Write(Environment.NewLine);
+            }
+            //foreach(Person p in list)
         }
     }
 }

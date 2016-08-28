@@ -346,7 +346,7 @@ namespace Health_Monitor
 
         // Рассчёт диагностических коэффициэнтов
         // Показатель двойного произведения
-        private static STP STPCalc(double pin, char gender)
+        public static STP STPCalc(double pin, char gender)
         {
             if (gender == 'м')
             {
@@ -416,7 +416,7 @@ namespace Health_Monitor
 
         // Рассчёт диагностических коэффициэнтов
         // Индекс Шаповаловой
-        private static Shap ShapCalc(double pin, char gender)
+        public static Shap ShapCalc(double pin, char gender)
         {
 
             if (gender == 'м')
@@ -448,7 +448,7 @@ namespace Health_Monitor
 
         // Рассчёт диагностических коэффициэнтов
         // Прыжок
-        private static Jump JumpCalc(double pin, char gender)
+        public static Jump JumpCalc(double pin, char gender)
         {
 
             if (gender == 'м')
