@@ -201,7 +201,7 @@
             // 
             this.inAge.Location = new System.Drawing.Point(452, 35);
             this.inAge.Maximum = new decimal(new int[] {
-            65,
+            75,
             0,
             0,
             0});
@@ -329,7 +329,7 @@
             0,
             0});
             this.inTime.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             0});
@@ -397,7 +397,7 @@
             this.inDyn.DecimalPlaces = 1;
             this.inDyn.Location = new System.Drawing.Point(452, 180);
             this.inDyn.Maximum = new decimal(new int[] {
-            80,
+            115,
             0,
             0,
             0});
@@ -420,12 +420,12 @@
             this.inFlex.DecimalPlaces = 1;
             this.inFlex.Location = new System.Drawing.Point(188, 154);
             this.inFlex.Maximum = new decimal(new int[] {
-            80,
+            120,
             0,
             0,
             0});
             this.inFlex.Minimum = new decimal(new int[] {
-            30,
+            50,
             0,
             0,
             -2147483648});
@@ -456,7 +456,7 @@
             0});
             this.inVolume.Location = new System.Drawing.Point(126, 154);
             this.inVolume.Maximum = new decimal(new int[] {
-            10000,
+            20000,
             0,
             0,
             0});
@@ -497,7 +497,7 @@
             this.inHeight.DecimalPlaces = 1;
             this.inHeight.Location = new System.Drawing.Point(6, 154);
             this.inHeight.Maximum = new decimal(new int[] {
-            300,
+            330,
             0,
             0,
             0});
@@ -559,7 +559,7 @@
             // 
             this.inDyas.Location = new System.Drawing.Point(104, 36);
             this.inDyas.Maximum = new decimal(new int[] {
-            150,
+            220,
             0,
             0,
             0});
@@ -576,7 +576,7 @@
             // 
             this.inSyst.Location = new System.Drawing.Point(9, 36);
             this.inSyst.Maximum = new decimal(new int[] {
-            220,
+            320,
             0,
             0,
             0});
@@ -639,6 +639,11 @@
             0,
             0,
             0});
+            this.inHbfreturn.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.inHbfreturn.Name = "inHbfreturn";
             this.inHbfreturn.Size = new System.Drawing.Size(50, 20);
             this.inHbfreturn.TabIndex = 4;
@@ -661,7 +666,12 @@
             // 
             this.inHbfload.Location = new System.Drawing.Point(62, 38);
             this.inHbfload.Maximum = new decimal(new int[] {
-            150,
+            200,
+            0,
+            0,
+            0});
+            this.inHbfload.Minimum = new decimal(new int[] {
+            5,
             0,
             0,
             0});
@@ -688,6 +698,11 @@
             this.inhbf_idle.Location = new System.Drawing.Point(6, 38);
             this.inhbf_idle.Maximum = new decimal(new int[] {
             150,
+            0,
+            0,
+            0});
+            this.inhbf_idle.Minimum = new decimal(new int[] {
+            5,
             0,
             0,
             0});
@@ -1164,6 +1179,8 @@
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(1024, 430);
+            this.MinimumSize = new System.Drawing.Size(1024, 430);
             this.Name = "AddDialog";
             this.Text = "Расчёт параметров";
             this.Load += new System.EventHandler(this.Form1_Load);

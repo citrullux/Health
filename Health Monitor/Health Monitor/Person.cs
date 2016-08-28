@@ -136,7 +136,7 @@ namespace Health_Monitor
         
         // Рассчёт индекса Шаповаловой
         [System.ComponentModel.DisplayName("Индекс Шаповалова")]
-        public double oShap { get { return weight/height*lift/60;} }
+        public double oShap { get { return 1000*weight/height*lift/60;} }
         
         // Рассчёт индекса Скирбинского
         [System.ComponentModel.DisplayName("Индекс Скирбинского")]
@@ -147,7 +147,7 @@ namespace Health_Monitor
         public double oFunc { get { return 0.011 * hbf_idle 
             + 0.014 * syst + 0.008 * dyast 
             + 0.009 * weight - 0.009 * height 
-            + 0.0014 * age - 0.27;} }
+            + 0.014 * age - 0.27;} }
         
         // Тип кровообращения
         [System.ComponentModel.DisplayName("Тип кровообращения")]

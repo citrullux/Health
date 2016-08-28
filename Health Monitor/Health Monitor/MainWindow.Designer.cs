@@ -133,9 +133,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 566);
+            this.ClientSize = new System.Drawing.Size(1008, 562);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grid);
+            this.MaximumSize = new System.Drawing.Size(1024, 600);
+            this.MinimumSize = new System.Drawing.Size(1024, 600);
             this.Name = "MainWindow";
             this.Text = "Определение физкультурной группы";
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
