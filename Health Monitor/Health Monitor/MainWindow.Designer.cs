@@ -139,7 +139,7 @@
             this.MaximumSize = new System.Drawing.Size(1024, 600);
             this.MinimumSize = new System.Drawing.Size(1024, 600);
             this.Name = "MainWindow";
-            this.Text = "Определение физкультурной группы";
+            this.Text = "Определение физкультурной группы (средний школьный возраст 11-14 лет)";
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

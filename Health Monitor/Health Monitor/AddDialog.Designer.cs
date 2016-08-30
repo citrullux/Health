@@ -201,12 +201,12 @@
             // 
             this.inAge.Location = new System.Drawing.Point(452, 35);
             this.inAge.Maximum = new decimal(new int[] {
-            75,
+            14,
             0,
             0,
             0});
             this.inAge.Minimum = new decimal(new int[] {
-            5,
+            11,
             0,
             0,
             0});
@@ -214,7 +214,7 @@
             this.inAge.Size = new System.Drawing.Size(54, 20);
             this.inAge.TabIndex = 26;
             this.inAge.Value = new decimal(new int[] {
-            16,
+            11,
             0,
             0,
             0});
@@ -1182,7 +1182,7 @@
             this.MaximumSize = new System.Drawing.Size(1024, 430);
             this.MinimumSize = new System.Drawing.Size(1024, 430);
             this.Name = "AddDialog";
-            this.Text = "Расчёт параметров";
+            this.Text = "Расчёт параметров (средний школьный возраст 11-14 лет)";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
