@@ -27,7 +27,7 @@ namespace Health_Monitor
         public Person () {
             name = "Иванов Иван Иванович";
             gender = 'м';
-            age = 16;
+            age = 11;
             diag = "Здоров";
             volume = 2500;
             time = 30;
