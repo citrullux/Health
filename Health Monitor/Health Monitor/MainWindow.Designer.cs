@@ -159,8 +159,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(146, 183);
             this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "Внимание! Созданную диагностическую таблицу ни в коем случае нельзя импортировать" +
-    " с помощью функции импорта.";
+            this.textBox1.Text = "Внимание! Созданную диагностическую таблицу нельзя импортировать";
             // 
             // MainWindow
             // 
@@ -176,7 +175,7 @@
             this.MaximumSize = new System.Drawing.Size(1024, 480);
             this.MinimumSize = new System.Drawing.Size(1024, 480);
             this.Name = "MainWindow";
-            this.Text = "Определение физкультурной группы (средний школьный возраст 11-14 лет)";
+            this.Text = "Определение физкультурной группы";
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

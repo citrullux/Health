@@ -201,12 +201,12 @@
             // 
             this.inAge.Location = new System.Drawing.Point(452, 35);
             this.inAge.Maximum = new decimal(new int[] {
-            14,
+            18,
             0,
             0,
             0});
             this.inAge.Minimum = new decimal(new int[] {
-            11,
+            7,
             0,
             0,
             0});

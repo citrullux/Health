@@ -172,18 +172,18 @@ namespace Health_Monitor
             {
                 return (int)PinCalc(oPinj) 
                      + (int)ExcCalc(oExcurcion)
-                     + (int)ScirbCalc(oSkir, gender)
+                     + (int)ScirbCalc(oSkir, gender, age)
                      + (int)KerdCalc(oKerd)
                      + (int)EconCalc(oEcon)
-                     + (int)HBFCalc(hbf_idle, gender)
-                     + (int)STPCalc(oSTP, gender)
+                     + (int)HBFCalc(hbf_idle, gender, age)
+                     + (int)STPCalc(oSTP, gender, age)
                      + (int)TypeCalc(oType)
                      + (int)FuncCalc(oFunc)
                      + (int)FlexCalc(flexibility)
-                     + (int)ShapCalc(oShap, gender)
-                     + (int)JumpCalc(jump, gender)
-                     + (int)RoofCalc(oRoof)
-                     + (int)DynamCalc(dynam, gender);
+                     + (int)ShapCalc(oShap, gender, age)
+                     + (int)JumpCalc(jump, gender, age)
+                     + (int)RoofCalc(oRoof, age)
+                     + (int)DynamCalc(dynam, gender, age);
             } 
         }
 
@@ -262,34 +262,92 @@ namespace Health_Monitor
 
         // Рассчёт диагностических коэффициэнтов
         // Индекс Скирбинского
-        public static Skir ScirbCalc(double pin, char ch)
+        public static Skir ScirbCalc(double pin, char ch, double age)
         {
-            
-            if (ch == 'м')
+            if (age >= 11 && age <= 14)
             {
-                if (pin <= 1147)
+                if (ch == 'м')
+                {
+                    if (pin <= 1147)
+                        return Skir.Low;
+                    if (pin > 1147 && pin <= 1407)
+                        return Skir.LowMid;
+                    if (pin > 1407 && pin <= 1940)
+                        return Skir.Middle;
+                    if (pin > 1940 && pin <= 2206)
+                        return Skir.HighMid;
+                    if (pin > 2207)
+                        return Skir.High;
+                }
+
+                if (pin <= 865)
                     return Skir.Low;
-                if (pin > 1147 && pin <= 1407)
+                if (pin > 865 && pin <= 1010)
                     return Skir.LowMid;
-                if (pin > 1407 && pin <= 1940)
+                if (pin > 1010 && pin <= 1501)
                     return Skir.Middle;
-                if (pin > 1940 && pin <= 2206)
+                if (pin > 1501 && pin <= 1746)
                     return Skir.HighMid;
-                if (pin > 2207)
+                if (pin > 1746)
+                return Skir.High;
+            }
+           
+            if (age >= 15 && age <= 18)
+            {
+                if (ch == 'м')
+                {
+                    if (pin <= 1199)
+                        return Skir.Low;
+                    if (pin > 1199 && pin <= 1515)
+                        return Skir.LowMid;
+                    if (pin > 1515 && pin <= 2788)
+                        return Skir.Middle;
+                    if (pin > 2788 && pin <= 3424)
+                        return Skir.HighMid;
+                    if (pin > 3424)
+                        return Skir.High;
+                }
+
+                if (pin <= 899)
+                    return Skir.Low;
+                if (pin > 899 && pin <= 1149)
+                    return Skir.LowMid;
+                if (pin > 1149 && pin <= 1700)
+                    return Skir.Middle;
+                if (pin > 1700 && pin <= 2000)
+                    return Skir.HighMid;
+                if (pin > 2000)
                     return Skir.High;
             }
 
-            if (pin <= 865)
-                return Skir.Low;
-            if (pin > 865 && pin <= 1010)
-                return Skir.LowMid;
-            if (pin > 1010 && pin <= 1501)
-                return Skir.Middle;
-            if (pin > 1501 && pin <= 1746)
-                return Skir.HighMid;
-            //if (pin > 1746)
-                return Skir.High;
+            if (age >= 7 && age <= 11)
+            {
+                if (ch == 'м')
+                {
+                    if (pin <= 361)
+                        return Skir.Low;
+                    if (pin > 361 && pin <= 453)
+                        return Skir.LowMid;
+                    if (pin > 453 && pin <= 638)
+                        return Skir.Middle;
+                    if (pin > 638 && pin <= 730)
+                        return Skir.HighMid;
+                    if (pin > 730)
+                        return Skir.High;
+                }
 
+                if (pin <= 241)
+                    return Skir.Low;
+                if (pin > 241 && pin <= 344)
+                    return Skir.LowMid;
+                if (pin > 344 && pin <= 551)
+                    return Skir.Middle;
+                if (pin > 551 && pin <= 654)
+                    return Skir.HighMid;
+                //if (pin > 654)
+                  //  return Skir.High;
+            }
+            return Skir.High; // Вывод по умолчанию
         }
 
         // Рассчёт диагностических коэффициэнтов
@@ -323,55 +381,158 @@ namespace Health_Monitor
 
         // Рассчёт диагностических коэффициэнтов
         // ЧСС
-        public static HBF HBFCalc(double pin, char ch)
+        public static HBF HBFCalc(double pin, char ch, double age)
         {
-            if (ch == 'м')
+            if (age >= 11 && age <= 14)
             {
-                if (pin <= 70)
-                    return HBF.Brad;
-                if (pin > 70 && pin <= 80)
-                    return HBF.Normal;
-                //if (pin > 80)
+                if (ch == 'м')
+                {
+                    if (pin <= 70)
+                        return HBF.Brad;
+                    if (pin > 70 && pin <= 80)
+                        return HBF.Normal;
+                    //if (pin > 80)
                     return HBF.Tahy;
-            }
+                }
 
-            if (pin <= 55)
-                return HBF.Brad;
-            if (pin > 55 && pin <= 102)
-                return HBF.Normal;
-            //if (pin > 102)
-                return HBF.Tahy;         
+                if (pin <= 55)
+                    return HBF.Brad;
+                if (pin > 55 && pin <= 102)
+                    return HBF.Normal;
+                //if (pin > 102)
+                return HBF.Tahy;
+            }
+            if (age >= 15 && age <= 18)
+            {
+                if (ch == 'м')
+                {
+                    if (pin <= 55)
+                        return HBF.Brad;
+                    if (pin > 55 && pin <= 80)
+                        return HBF.Normal;
+                    //if (pin > 80)
+                    return HBF.Tahy;
+                }
+
+                if (pin <= 60)
+                    return HBF.Brad;
+                if (pin > 60 && pin <= 90)
+                    return HBF.Normal;
+                //if (pin > 90)
+                return HBF.Tahy;
+            }
+            if (age >= 7 && age <= 10)
+            {
+                if (ch == 'м')
+                {
+                    if (pin <= 55)
+                        return HBF.Brad;
+                    if (pin > 55 && pin <= 107)
+                        return HBF.Normal;
+                    //if (pin > 107)
+                    return HBF.Tahy;
+                }
+
+                if (pin <= 55)
+                    return HBF.Brad;
+                if (pin > 55 && pin <= 107)
+                    return HBF.Normal;
+                //if (pin > 107)
+                //return HBF.Tahy;
+            }
+            return HBF.Tahy;
         }
 
 
         // Рассчёт диагностических коэффициэнтов
         // Показатель двойного произведения
-        public static STP STPCalc(double pin, char gender)
+        public static STP STPCalc(double pin, char gender, double age)
         {
-            if (gender == 'м')
+            if (age >= 11 && age <= 14)
             {
+                if (gender == 'м')
+                {
+                    if (pin <= 70)
+                        return STP.High;
+                    if (pin > 70 && pin <= 78)
+                        return STP.HighMid;
+                    if (pin > 78 && pin <= 108)
+                        return STP.Middle;
+                    if (pin > 108 && pin <= 114)
+                        return STP.LowMid;
+                    if (pin > 114)
+                        return STP.Low;
+                }
+
                 if (pin <= 70)
                     return STP.High;
                 if (pin > 70 && pin <= 78)
                     return STP.HighMid;
-                if (pin > 78 && pin <= 108)
+                if (pin > 78 && pin <= 106)
                     return STP.Middle;
-                if (pin > 108 && pin <= 114)
+                if (pin > 106 && pin <= 114)
                     return STP.LowMid;
-                if (pin > 114)
-                    return STP.Low;
+                //if (pin > 114)
+                return STP.Low;
             }
 
-            if (pin <= 70)
-                return STP.High;
-            if (pin > 70 && pin <= 78)
-                return STP.HighMid;
-            if (pin > 78 && pin <= 106)
-                return STP.Middle;
-            if (pin > 106 && pin <= 114)
-                return STP.LowMid;
-            //if (pin > 114)
+            if (age >= 15 && age <= 18)
+            {
+                if (gender == 'м')
+                {
+                    if (pin <= 70)
+                        return STP.High;
+                    if (pin > 70 && pin <= 80)
+                        return STP.HighMid;
+                    if (pin > 80 && pin <= 107)
+                        return STP.Middle;
+                    if (pin > 107 && pin <= 115)
+                        return STP.LowMid;
+                    if (pin > 115)
+                        return STP.Low;
+                }
+
+                if (pin <= 70)
+                    return STP.High;
+                if (pin > 70 && pin <= 85)
+                    return STP.HighMid;
+                if (pin > 85 && pin <= 100)
+                    return STP.Middle;
+                if (pin > 100 && pin <= 110)
+                    return STP.LowMid;
+                //if (pin > 110)
                 return STP.Low;
+            }
+
+            if (age >= 7 && age <= 10)
+            {
+                if (gender == 'м')
+                {
+                    if (pin <= 70)
+                        return STP.High;
+                    if (pin > 70 && pin <= 79)
+                        return STP.HighMid;
+                    if (pin > 79 && pin <= 108)
+                        return STP.Middle;
+                    if (pin > 108 && pin <= 116)
+                        return STP.LowMid;
+                    if (pin > 116)
+                        return STP.Low;
+                }
+
+                if (pin <= 70)
+                    return STP.High;
+                if (pin > 70 && pin <= 83)
+                    return STP.HighMid;
+                if (pin > 83 && pin <= 105)
+                    return STP.Middle;
+                if (pin > 105 && pin <= 110)
+                    return STP.LowMid;
+                //if (pin > 110)
+                //return STP.Low;
+            }
+            return STP.Low;
+
         }
 
         // Рассчёт диагностических коэффициэнтов
@@ -416,102 +577,282 @@ namespace Health_Monitor
 
         // Рассчёт диагностических коэффициэнтов
         // Индекс Шаповаловой
-        public static Shap ShapCalc(double pin, char gender)
+        public static Shap ShapCalc(double pin, char gender, double age)
         {
-
-            if (gender == 'м')
+            if (age >= 11 && age <= 14)
             {
-                if (pin <= 128)
+                if (gender == 'м')
+                {
+                    if (pin <= 128)
+                        return Shap.Low;
+                    if (pin > 128 && pin <= 157)
+                        return Shap.LowMid;
+                    if (pin > 158 && pin <= 217)
+                        return Shap.Middle;
+                    if (pin > 217 && pin <= 246)
+                        return Shap.HighMid;
+                    if (pin > 246)
+                        return Shap.High;
+                }
+
+                if (pin <= 193)
                     return Shap.Low;
-                if (pin > 128 && pin <= 157)
+                if (pin > 193 && pin <= 216)
                     return Shap.LowMid;
-                if (pin > 158 && pin <= 217)
+                if (pin > 216 && pin <= 253)
                     return Shap.Middle;
-                if (pin > 217 && pin <= 246)
+                if (pin > 253 && pin <= 276)
                     return Shap.HighMid;
-                if (pin > 246)
-                    return Shap.High;
+                //if (pin > 276)
+                return Shap.High;
             }
 
-            if (pin <= 193)
-                return Shap.Low;
-            if (pin > 193 && pin <= 216)
-                return Shap.LowMid;
-            if (pin > 216 && pin <= 253)
-                return Shap.Middle;
-            if (pin > 253 && pin <= 276)
-                return Shap.HighMid;
-            //if (pin > 276)
+            if (age >= 15 && age <= 18)
+            {
+                if (gender == 'м')
+                {
+                    if (pin <= 194)
+                        return Shap.Low;
+                    if (pin > 194 && pin <= 219)
+                        return Shap.LowMid;
+                    if (pin > 219 && pin <= 270)
+                        return Shap.Middle;
+                    if (pin > 270 && pin <= 295)
+                        return Shap.HighMid;
+                    if (pin > 295)
+                        return Shap.High;
+                }
+
+                if (pin <= 212)
+                    return Shap.Low;
+                if (pin > 212 && pin <= 245)
+                    return Shap.LowMid;
+                if (pin > 245 && pin <= 312)
+                    return Shap.Middle;
+                if (pin > 312 && pin <= 345)
+                    return Shap.HighMid;
+                //if (pin > 345)
+                return Shap.High;
+            }
+
+            if (age >= 7 && age <= 10)
+            {
+                if (gender == 'м')
+                {
+                    if (pin <= 63)
+                        return Shap.Low;
+                    if (pin > 63 && pin <= 88)
+                        return Shap.LowMid;
+                    if (pin > 88 && pin <= 99)
+                        return Shap.Middle;
+                    if (pin > 99 && pin <= 110)
+                        return Shap.HighMid;
+                    if (pin > 110)
+                        return Shap.High;
+                }
+
+                if (pin <= 62)
+                    return Shap.Low;
+                if (pin > 62 && pin <= 76)
+                    return Shap.LowMid;
+                if (pin > 76 && pin <= 105)
+                    return Shap.Middle;
+                if (pin > 105 && pin <= 119)
+                    return Shap.HighMid;
+                //if (pin > 119)
+                //return Shap.High;
+            }
             return Shap.High;
         }
 
 
         // Рассчёт диагностических коэффициэнтов
         // Прыжок
-        public static Jump JumpCalc(double pin, char gender)
+        public static Jump JumpCalc(double pin, char gender, double age)
         {
-
-            if (gender == 'м')
+            if (age >= 11 && age <= 14)
             {
-                if (pin <= 170)
+                if (gender == 'м')
+                {
+                    if (pin <= 170)
+                        return Jump.Low;
+                    if (pin > 170 && pin <= 187)
+                        return Jump.LowMid;
+                    if (pin > 187 && pin <= 199)
+                        return Jump.Middle;
+                    if (pin > 199 && pin <= 209)
+                        return Jump.HighMid;
+                    if (pin > 209)
+                        return Jump.High;
+                }
+
+                if (pin <= 150)
                     return Jump.Low;
-                if (pin > 170 && pin <= 187)
+                if (pin > 150 && pin <= 168)
                     return Jump.LowMid;
-                if (pin > 187 && pin <= 199)
+                if (pin > 168 && pin <= 181)
                     return Jump.Middle;
-                if (pin > 199 && pin <= 209)
+                if (pin > 181 && pin <= 194)
                     return Jump.HighMid;
-                if (pin > 209)
-                    return Jump.High;
+                //if (pin > 194)
+                return Jump.High;
             }
 
-            if (pin <= 150)
-                return Jump.Low;
-            if (pin > 150 && pin <= 168)
-                return Jump.LowMid;
-            if (pin > 168 && pin <= 181)
-                return Jump.Middle;
-            if (pin > 181 && pin <= 194)
-                return Jump.HighMid;
-            //if (pin > 194)
+            if (age >= 15 && age <= 18)
+            {
+                if (gender == 'м')
+                {
+                    if (pin <= 180)
+                        return Jump.Low;
+                    if (pin > 180 && pin <= 194)
+                        return Jump.LowMid;
+                    if (pin > 194 && pin <= 210)
+                        return Jump.Middle;
+                    if (pin > 210 && pin <= 229)
+                        return Jump.HighMid;
+                    if (pin > 229)
+                        return Jump.High;
+                }
+
+                if (pin <= 160)
+                    return Jump.Low;
+                if (pin > 160 && pin <= 169)
+                    return Jump.LowMid;
+                if (pin > 169 && pin <= 190)
+                    return Jump.Middle;
+                if (pin > 190 && pin <= 209)
+                    return Jump.HighMid;
+                //if (pin > 209)
+                return Jump.High;
+            }
+
+            if (age >= 7 && age <= 10)
+            {
+                if (gender == 'м')
+                {
+                    if (pin <= 110)
+                        return Jump.Low;
+                    if (pin > 110 && pin <= 124)
+                        return Jump.LowMid;
+                    if (pin > 124 && pin <= 145)
+                        return Jump.Middle;
+                    if (pin > 145 && pin <= 164)
+                        return Jump.HighMid;
+                    if (pin > 164)
+                        return Jump.High;
+                }
+
+                if (pin <= 100)
+                    return Jump.Low;
+                if (pin > 100 && pin <= 124)
+                    return Jump.LowMid;
+                if (pin > 124 && pin <= 140)
+                    return Jump.Middle;
+                if (pin > 140 && pin <= 154)
+                    return Jump.HighMid;
+                //if (pin > 154)
+                //return Jump.High;
+            }
             return Jump.High;
         }
         
         // Рассчёт диагностических коэффициэнтов
         // Индекс Руфье
-        public static Roof RoofCalc(double pin)
+        public static Roof RoofCalc(double pin, double age)
         {
-            if (pin <= 6.5)
-                return Roof.High;
-            if (pin > 6.5 && pin <= 9.4)
-                return Roof.HighMid;
-            if (pin > 9.4 && pin <= 11.4)
-                return Roof.Middle;
-            if (pin > 11.4 && pin <= 16.4)
-                return Roof.LowMid;
-            // if (pin > 9)
+            if (age >= 11 && age <= 14)
+            {
+                if (pin <= 6.5)
+                    return Roof.High;
+                if (pin > 6.5 && pin <= 9.4)
+                    return Roof.HighMid;
+                if (pin > 9.4 && pin <= 11.4)
+                    return Roof.Middle;
+                if (pin > 11.4 && pin <= 16.4)
+                    return Roof.LowMid;
+                // if (pin > 16.4)
+                return Roof.Low;
+            }
+            if (age >= 15 && age <= 18)
+            {
+                if (pin <= 5.0)
+                    return Roof.High;
+                if (pin > 5.0 && pin <= 7.9)
+                    return Roof.HighMid;
+                if (pin > 7.9 && pin <= 9.9)
+                    return Roof.Middle;
+                if (pin > 9.9 && pin <= 14.9)
+                    return Roof.LowMid;
+                // if (pin > 14.9)
+                return Roof.Low;
+            }
+            if (age >= 7 && age <= 10)
+            {
+                if (pin <= 10.0)
+                    return Roof.High;
+                if (pin > 10.0 && pin <= 13.2)
+                    return Roof.HighMid;
+                if (pin > 13.2 && pin <= 15.2)
+                    return Roof.Middle;
+                if (pin > 15.2 && pin <= 20.0)
+                    return Roof.LowMid;
+                // if (pin > 20.0)
+                //return Roof.Low;
+            }
             return Roof.Low;
         }
 
         // Рассчёт диагностических коэффициэнтов
         // Кистевая Динамометрия
-        public static Dynam DynamCalc(double pin, char gender)
+        public static Dynam DynamCalc(double pin, char gender, double age)
         {
-            if (gender == 'м')
+            if (age >= 11 && age <= 14)
             {
-                if (pin <= 26.5)
-                    return Dynam.Frustr;
-                if (pin > 26.5)
-                    return Dynam.Satisf;
-            }
+                if (gender == 'м')
+                {
+                    if (pin <= 26.5)
+                        return Dynam.Frustr;
+                    if (pin > 26.5)
+                        return Dynam.Satisf;
+                }
 
-            if (pin <= 23.5)
-                return Dynam.Frustr;
-            //if (pin > 23.5)
+                if (pin <= 23.5)
+                    return Dynam.Frustr;
+                //if (pin > 23.5)
+                return Dynam.Satisf;
+            }
+            if (age >= 15 && age <= 18)
+            {
+                if (gender == 'м')
+                {
+                    if (pin <= 39.4)
+                        return Dynam.Frustr;
+                    if (pin > 39.4)
+                        return Dynam.Satisf;
+                }
+
+                if (pin <= 28.7)
+                    return Dynam.Frustr;
+                //if (pin > 28.7)
+                return Dynam.Satisf;
+            }
+            if (age >= 7 && age <= 10)
+            {
+                if (gender == 'м')
+                {
+                    if (pin <= 10.7)
+                        return Dynam.Frustr;
+                    if (pin > 10.7)
+                        return Dynam.Satisf;
+                }
+
+                if (pin <= 9.9)
+                    return Dynam.Frustr;
+                //if (pin > 9.9)
+                //return Dynam.Satisf;
+            }
             return Dynam.Satisf;
         }
-
-
 
     }
 }
