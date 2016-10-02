@@ -1182,7 +1182,7 @@
             this.MaximumSize = new System.Drawing.Size(1024, 430);
             this.MinimumSize = new System.Drawing.Size(1024, 430);
             this.Name = "AddDialog";
-            this.Text = "Расчёт параметров (средний школьный возраст 11-14 лет)";
+            this.Text = "Расчёт параметров";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
