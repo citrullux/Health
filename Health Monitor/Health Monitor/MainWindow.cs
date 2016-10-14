@@ -37,86 +37,127 @@ namespace Health_Monitor
         private void btnExp_Click(object sender, EventArgs e)
         {
             var dialog = new SaveFileDialog();
-            var fname = "data.csv";
+            string fname = "data.csv";
+            string fnameOth = " ";
             dialog.DefaultExt = "csv";
             dialog.Filter = "CSV (*.csv)|*.csv|All files (*.*)|*.*";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 fname = dialog.FileName;
             }
+            export(fname);
             
+            fname = fname.Replace(".csv", " ");
+            
+            fnameOth = fname  + "(" + (int)AgeMin.Child + " - " + (int)AgeMax.Child + " лет).csv";
+            export(fnameOth, (int)AgeMin.Child, (int)AgeMax.Child);
+
+            fnameOth = fname + "(" + (int)AgeMin.Middle + " - " + (int)AgeMax.Middle + " лет).csv";
+            export(fnameOth, (int)AgeMin.Middle, (int)AgeMax.Middle);
+
+            fnameOth = fname + "(" + (int)AgeMin.High + " - " + (int)AgeMax.High + " лет).csv";
+            export(fnameOth, (int)AgeMin.High, (int)AgeMax.High);
+        }
+
+        public void export(string fname)
+        {
             using (StreamWriter sr = new StreamWriter(fname, false, Encoding.GetEncoding(1251)))
             {
-                sr.Write("ФИО ; ");
-                sr.Write("Пол ; ");
-                sr.Write("Возраст ; ");
-                sr.Write("Диагноз ; ");
-                sr.Write("ЖЁЛ ; ");
-                sr.Write("Время задержки дыхания ; ");
-                sr.Write("ЧСС покоя ; ");
-                sr.Write("ЧСС нагрузки ; ");
-                sr.Write("ЧСС восстановления ; ");
-                sr.Write("Систолическое давление ; ");
-                sr.Write("Диастолическое давление ; ");
-                sr.Write("Число подъёмов тела в сед.; ");
-                sr.Write("Рост ; ");
-                sr.Write("Вес ; ");
-                sr.Write("Окружность грудной клетки ; ");
-                sr.Write("Окружность грудной клетки на вдохе ; ");
-                sr.Write("Гибкость ; ");
-                sr.Write("Прыжок с места ; ");
-                sr.Write("Динамометрия ; ");
-                sr.Write("Экскурсия грудной клетки ; ");
-                sr.Write("Индекс Пинье ; ");
-                sr.Write("Индекс Кердо ; ");
-                sr.Write("Индекс Руфье ; ");
-                sr.Write("Индекс Шаповаловой ; ");
-                sr.Write("Индекс Скирбинского ; ");
-                sr.Write("Индекс Функциональных изменений ; ");
-                sr.Write("Тип кровообращения ; ");
-                sr.Write("Показатель двойного произведения ; ");
-                sr.Write("Экономичность кровообращения ; ");
-                sr.Write("Суммарный диагностический коэффициэнт; ");
-                sr.Write("Заключение ; ");
-                sr.Write(Environment.NewLine);
-
+                exportFirst(sr);
                 foreach (Person p in list)
                 {
-                    sr.Write(p.name + "; ");
-                    sr.Write(p.gender + "; ");
-                    sr.Write(p.age + "; ");
-                    sr.Write(p.diag + "; ");
-                    sr.Write(p.volume + "; ");
-                    sr.Write(p.time + "; ");
-                    sr.Write(p.hbf_idle + "; ");
-                    sr.Write(p.hbf_load + "; ");
-                    sr.Write(p.hbf_return + "; ");
-                    sr.Write(p.syst + "; ");
-                    sr.Write(p.dyast + "; ");
-                    sr.Write(p.lift + "; ");
-                    sr.Write(p.height + "; ");
-                    sr.Write(p.weight + "; ");
-                    sr.Write(p.circle + "; ");
-                    sr.Write(p.circleFull + "; ");
-                    sr.Write(p.flexibility + "; ");
-                    sr.Write(p.jump + "; ");
-                    sr.Write(p.dynam + "; ");
-                    sr.Write(p.oExcurcion + "; ");
-                    sr.Write(p.oPinj + "; ");
-                    sr.Write(p.oKerd + "; ");
-                    sr.Write(p.oRoof + "; ");
-                    sr.Write(p.oShap + "; ");
-                    sr.Write(p.oSkir + "; ");
-                    sr.Write(p.oFunc + "; ");
-                    sr.Write(p.oType + "; ");
-                    sr.Write(p.oSTP + "; ");
-                    sr.Write(p.oEcon + "; ");
-                    sr.Write(p.oSumm + "; ");
-                    sr.Write(p.oConc + "; ");
-                    sr.Write(Environment.NewLine);
+                    exportOther(sr, p);
                 }
             }
         }
+
+        public void export(string fname, int minAge, int maxAge)
+        {
+            using (StreamWriter sr = new StreamWriter(fname, false, Encoding.GetEncoding(1251)))
+            {
+                exportFirst(sr);
+                foreach (Person p in list)
+                {
+                    if (p.age >= minAge && p.age <= maxAge)
+                    {
+                        exportOther(sr, p);
+                    }
+                }
+            }
+        }
+
+        public void exportFirst(StreamWriter sr)
+        {
+            sr.Write("ФИО ; ");
+            sr.Write("Пол ; ");
+            sr.Write("Возраст ; ");
+            sr.Write("Диагноз ; ");
+            sr.Write("ЖЁЛ ; ");
+            sr.Write("Время задержки дыхания ; ");
+            sr.Write("ЧСС покоя ; ");
+            sr.Write("ЧСС нагрузки ; ");
+            sr.Write("ЧСС восстановления ; ");
+            sr.Write("Систолическое давление ; ");
+            sr.Write("Диастолическое давление ; ");
+            sr.Write("Число подъёмов тела в сед.; ");
+            sr.Write("Рост ; ");
+            sr.Write("Вес ; ");
+            sr.Write("Окружность грудной клетки ; ");
+            sr.Write("Окружность грудной клетки на вдохе ; ");
+            sr.Write("Гибкость ; ");
+            sr.Write("Прыжок с места ; ");
+            sr.Write("Динамометрия ; ");
+            sr.Write("Экскурсия грудной клетки ; ");
+            sr.Write("Индекс Пинье ; ");
+            sr.Write("Индекс Кердо ; ");
+            sr.Write("Индекс Руфье ; ");
+            sr.Write("Индекс Шаповаловой ; ");
+            sr.Write("Индекс Скирбинского ; ");
+            sr.Write("Индекс Функциональных изменений ; ");
+            sr.Write("Тип кровообращения ; ");
+            sr.Write("Показатель двойного произведения ; ");
+            sr.Write("Экономичность кровообращения ; ");
+            sr.Write("Суммарный диагностический коэффициэнт; ");
+            sr.Write("Заключение ; ");
+            sr.Write(Environment.NewLine);
+        }
+
+        public void exportOther(StreamWriter sr, Person p)
+        {
+            sr.Write(p.name + "; ");
+            sr.Write(p.gender + "; ");
+            sr.Write(p.age + "; ");
+            sr.Write(p.diag + "; ");
+            sr.Write(p.volume + "; ");
+            sr.Write(p.time + "; ");
+            sr.Write(p.hbf_idle + "; ");
+            sr.Write(p.hbf_load + "; ");
+            sr.Write(p.hbf_return + "; ");
+            sr.Write(p.syst + "; ");
+            sr.Write(p.dyast + "; ");
+            sr.Write(p.lift + "; ");
+            sr.Write(p.height + "; ");
+            sr.Write(p.weight + "; ");
+            sr.Write(p.circle + "; ");
+            sr.Write(p.circleFull + "; ");
+            sr.Write(p.flexibility + "; ");
+            sr.Write(p.jump + "; ");
+            sr.Write(p.dynam + "; ");
+            sr.Write(p.oExcurcion + "; ");
+            sr.Write(p.oPinj + "; ");
+            sr.Write(p.oKerd + "; ");
+            sr.Write(p.oRoof + "; ");
+            sr.Write(p.oShap + "; ");
+            sr.Write(p.oSkir + "; ");
+            sr.Write(p.oFunc + "; ");
+            sr.Write(p.oType + "; ");
+            sr.Write(p.oSTP + "; ");
+            sr.Write(p.oEcon + "; ");
+            sr.Write(p.oSumm + "; ");
+            sr.Write(p.oConc + "; ");
+            sr.Write(Environment.NewLine);
+        }
+
 
         private void btnImp_Click(object sender, EventArgs e)
         {

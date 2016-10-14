@@ -20,6 +20,8 @@ namespace Health_Monitor
     public enum Jump { High = 6, HighMid = 3, Middle = 2, LowMid = -1, Low = -2 };
     public enum Roof { High = 3, HighMid = 1, Middle = 0, LowMid = -1, Low = -3 };
     public enum Dynam { Satisf = 10, Frustr = -3 };
+    public enum AgeMin {Child = 7, Middle = 11, High = 15}
+    public enum AgeMax {Child = 10, Middle = 14, High = 18}
 
     public class Person
     {
@@ -211,7 +213,7 @@ namespace Health_Monitor
                     {
                         return "Занятия ФК в основной группе";
                     }
-                    return /* "В спецификации ваш случай не рассмотрен. ПОЗДРАВЛЯЮ, ВЫ - дивергент. "*/ "Занятия ФК в специальной медицинской группе.";
+                    return "Занятия ФК в специальной медицинской группе.";
                 }
                 // if (oSumm >= 13)
                 if (diag == "Здоров")
