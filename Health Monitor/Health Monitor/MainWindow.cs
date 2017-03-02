@@ -78,7 +78,7 @@ namespace Health_Monitor
                 exportFirst(sr);
                 foreach (Person p in list)
                 {
-                    if (p.age >= minAge && p.age <= maxAge)
+                    if (p.Age >= minAge && p.Age <= maxAge)
                     {
                         exportOther(sr, p);
                     }
@@ -124,25 +124,25 @@ namespace Health_Monitor
 
         public void exportOther(StreamWriter sr, Person p)
         {
-            sr.Write(p.name + "; ");
-            sr.Write(p.gender + "; ");
-            sr.Write(p.age + "; ");
-            sr.Write(p.diag + "; ");
-            sr.Write(p.volume + "; ");
-            sr.Write(p.time + "; ");
-            sr.Write(p.hbf_idle + "; ");
-            sr.Write(p.hbf_load + "; ");
-            sr.Write(p.hbf_return + "; ");
-            sr.Write(p.syst + "; ");
-            sr.Write(p.dyast + "; ");
-            sr.Write(p.lift + "; ");
-            sr.Write(p.height + "; ");
-            sr.Write(p.weight + "; ");
-            sr.Write(p.circle + "; ");
-            sr.Write(p.circleFull + "; ");
-            sr.Write(p.flexibility + "; ");
-            sr.Write(p.jump + "; ");
-            sr.Write(p.dynam + "; ");
+            sr.Write(p.Name + "; ");
+            sr.Write(p.Gender + "; ");
+            sr.Write(p.Age + "; ");
+            sr.Write(p.Diag + "; ");
+            sr.Write(p.Volume + "; ");
+            sr.Write(p.Time + "; ");
+            sr.Write(p.Hbf_idle + "; ");
+            sr.Write(p.Hbf_load + "; ");
+            sr.Write(p.Hbf_return + "; ");
+            sr.Write(p.Syst + "; ");
+            sr.Write(p.Dyast + "; ");
+            sr.Write(p.Lift + "; ");
+            sr.Write(p.Height + "; ");
+            sr.Write(p.Weight + "; ");
+            sr.Write(p.Circle + "; ");
+            sr.Write(p.CircleFull + "; ");
+            sr.Write(p.Flexibility + "; ");
+            sr.Write(p.Jump + "; ");
+            sr.Write(p.Dynam + "; ");
             sr.Write(p.oExcurcion + "; ");
             sr.Write(p.oPinj + "; ");
             sr.Write(p.oKerd + "; ");
@@ -169,7 +169,12 @@ namespace Health_Monitor
             {
                 fname = dialog.FileName;
             }
-            list = new BindingList<Person>();
+            else
+            {
+                return;
+            }
+            // Раскомментировать для старого поведения...
+            //list = new BindingList<Person>();
             grid.DataSource = list;
             using (StreamReader sr = new StreamReader(fname, Encoding.GetEncoding(1251)))
             {
@@ -178,25 +183,25 @@ namespace Health_Monitor
                 {
                     Person obj = new Person();
                     string[] fields = line.Split(';');
-                    obj.name = fields[0].Trim();
-                    obj.gender = fields[1].Trim()[0];
-                    obj.age = double.Parse(fields[2]);
-                    obj.diag = fields[3].Trim();
-                    obj.volume = double.Parse(fields[4]);
-                    obj.time = double.Parse(fields[5]);
-                    obj.hbf_idle = double.Parse(fields[6]);
-                    obj.hbf_load = double.Parse(fields[7]);
-                    obj.hbf_return = double.Parse(fields[8]);
-                    obj.syst = double.Parse(fields[9]);
-                    obj.dyast = double.Parse(fields[10]);
-                    obj.lift = double.Parse(fields[11]);
-                    obj.height = double.Parse(fields[12]);
-                    obj.weight = double.Parse(fields[13]);
-                    obj.circle = double.Parse(fields[14]);
-                    obj.circleFull = double.Parse(fields[15]);
-                    obj.flexibility = double.Parse(fields[16]);
-                    obj.jump = double.Parse(fields[17]);
-                    obj.dynam = double.Parse(fields[18]);
+                    obj.Name = fields[0].Trim();
+                    obj.Gender = fields[1].Trim()[0];
+                    obj.Age = double.Parse(fields[2]);
+                    obj.Diag = fields[3].Trim();
+                    obj.Volume = double.Parse(fields[4]);
+                    obj.Time = double.Parse(fields[5]);
+                    obj.Hbf_idle = double.Parse(fields[6]);
+                    obj.Hbf_load = double.Parse(fields[7]);
+                    obj.Hbf_return = double.Parse(fields[8]);
+                    obj.Syst = double.Parse(fields[9]);
+                    obj.Dyast = double.Parse(fields[10]);
+                    obj.Lift = double.Parse(fields[11]);
+                    obj.Height = double.Parse(fields[12]);
+                    obj.Weight = double.Parse(fields[13]);
+                    obj.Circle = double.Parse(fields[14]);
+                    obj.CircleFull = double.Parse(fields[15]);
+                    obj.Flexibility = double.Parse(fields[16]);
+                    obj.Jump = double.Parse(fields[17]);
+                    obj.Dynam = double.Parse(fields[18]);
                     list.Add(obj);
                 }
             }
@@ -215,7 +220,12 @@ namespace Health_Monitor
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            var ind = grid.CurrentRow.Index;
+            // А есть ли что удалять?
+            if (grid.RowCount == 0)
+            {
+                return;
+            }
+            var ind = grid.CurrentRow.Index;        
             list.RemoveAt(ind);
         }
 
@@ -223,9 +233,9 @@ namespace Health_Monitor
             double all = list.Count();
             var l = list.Where(predicate);
             var n = l.Count();
-            double all_a = list.Where(p => p.diag == "Здоров").Count();
+            double all_a = list.Where(p => p.Diag == "Здоров").Count();
             double all_b = all - all_a;
-            var na = l.Where(p => p.diag == "Здоров").Count();
+            var na = l.Where(p => p.Diag == "Здоров").Count();
             var nb = n - na;
             var pa = (na+1) / (all_a + num);
             var pb = (nb+1) / (all_b + num);
@@ -237,7 +247,7 @@ namespace Health_Monitor
         private string summ_line(double j)
         {
             double all = list.Count();
-            double all_a = list.Where(p => p.diag == "Здоров").Count();
+            double all_a = list.Where(p => p.Diag == "Здоров").Count();
             var all_b = all - all_a;
             return "; сумма; " + all_a + "; " + all_b + "; " + "100" + "; " + "100" + "; ; ; ; " + j + "; "; ;
         }
@@ -316,23 +326,23 @@ namespace Health_Monitor
                 sr.Write(";Индекс Скибинского");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender, p.age) == Skir.High, J.Length, out J[0]);
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.Gender, p.Age) == Skir.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender, p.age) == Skir.HighMid, J.Length, out J[1]);
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.Gender, p.Age) == Skir.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender, p.age) == Skir.Middle, J.Length, out J[2]);
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.Gender, p.Age) == Skir.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender, p.age) == Skir.LowMid, J.Length, out J[3]);
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.Gender, p.Age) == Skir.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ScirbCalc(p.oSkir, p.gender, p.age) == Skir.Low, J.Length, out J[4]);
+                line = format_line(p => Person.ScirbCalc(p.oSkir, p.Gender, p.Age) == Skir.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -392,15 +402,15 @@ namespace Health_Monitor
                 sr.Write(";Частота сердечных сокращений");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender, p.age) == HBF.Brad, J.Length, out J[0]);
+                line = format_line(p => Person.HBFCalc(p.Hbf_idle, p.Gender, p.Age) == HBF.Brad, J.Length, out J[0]);
                 sr.Write("1; брадикальная; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender, p.age) == HBF.Normal, J.Length, out J[0]);
+                line = format_line(p => Person.HBFCalc(p.Hbf_idle, p.Gender, p.Age) == HBF.Normal, J.Length, out J[0]);
                 sr.Write("2; нормальная; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.HBFCalc(p.hbf_idle, p.gender, p.age) == HBF.Tahy, J.Length, out J[0]);
+                line = format_line(p => Person.HBFCalc(p.Hbf_idle, p.Gender, p.Age) == HBF.Tahy, J.Length, out J[0]);
                 sr.Write("3; тахикардия; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -412,23 +422,23 @@ namespace Health_Monitor
                 sr.Write(";Показатель двойного произведения");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.STPCalc(p.oSTP, p.gender, p.age) == STP.High, J.Length, out J[0]);
+                line = format_line(p => Person.STPCalc(p.oSTP, p.Gender, p.Age) == STP.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.STPCalc(p.oSTP, p.gender, p.age) == STP.HighMid, J.Length, out J[1]);
+                line = format_line(p => Person.STPCalc(p.oSTP, p.Gender, p.Age) == STP.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.STPCalc(p.oSTP, p.gender, p.age) == STP.Middle, J.Length, out J[2]);
+                line = format_line(p => Person.STPCalc(p.oSTP, p.Gender, p.Age) == STP.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.STPCalc(p.oSTP, p.gender, p.age) == STP.LowMid, J.Length, out J[3]);
+                line = format_line(p => Person.STPCalc(p.oSTP, p.Gender, p.Age) == STP.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.STPCalc(p.oSTP, p.gender, p.age) == STP.Low, J.Length, out J[4]);
+                line = format_line(p => Person.STPCalc(p.oSTP, p.Gender, p.Age) == STP.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -480,23 +490,23 @@ namespace Health_Monitor
                 sr.Write("; Гибкость");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.High, J.Length, out J[0]);
+                line = format_line(p => Person.FlexCalc(p.Flexibility) == Flex.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.HighMid, J.Length, out J[1]);
+                line = format_line(p => Person.FlexCalc(p.Flexibility) == Flex.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.Middle, J.Length, out J[2]);
+                line = format_line(p => Person.FlexCalc(p.Flexibility) == Flex.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.LowMid, J.Length, out J[3]);
+                line = format_line(p => Person.FlexCalc(p.Flexibility) == Flex.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.FlexCalc(p.flexibility) == Flex.Low, J.Length, out J[4]);
+                line = format_line(p => Person.FlexCalc(p.Flexibility) == Flex.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -508,23 +518,23 @@ namespace Health_Monitor
                 sr.Write("; Индекс Шаповаловой");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ShapCalc(p.oShap, p.gender, p.age) == Shap.High, J.Length, out J[0]);
+                line = format_line(p => Person.ShapCalc(p.oShap, p.Gender, p.Age) == Shap.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ShapCalc(p.oShap, p.gender, p.age) == Shap.HighMid, J.Length, out J[1]);
+                line = format_line(p => Person.ShapCalc(p.oShap, p.Gender, p.Age) == Shap.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ShapCalc(p.oShap, p.gender, p.age) == Shap.Middle, J.Length, out J[2]);
+                line = format_line(p => Person.ShapCalc(p.oShap, p.Gender, p.Age) == Shap.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ShapCalc(p.oShap, p.gender, p.age) == Shap.LowMid, J.Length, out J[3]);
+                line = format_line(p => Person.ShapCalc(p.oShap, p.Gender, p.Age) == Shap.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.ShapCalc(p.oShap, p.gender, p.age) == Shap.Low, J.Length, out J[4]);
+                line = format_line(p => Person.ShapCalc(p.oShap, p.Gender, p.Age) == Shap.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -536,23 +546,23 @@ namespace Health_Monitor
                 sr.Write("; Прыжок в длину");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.JumpCalc(p.jump, p.gender, p.age) == Jump.High, J.Length, out J[0]);
+                line = format_line(p => Person.JumpCalc(p.Jump, p.Gender, p.Age) == Jump.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.JumpCalc(p.jump, p.gender, p.age) == Jump.HighMid, J.Length, out J[1]);
+                line = format_line(p => Person.JumpCalc(p.Jump, p.Gender, p.Age) == Jump.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.JumpCalc(p.jump, p.gender, p.age) == Jump.Middle, J.Length, out J[2]);
+                line = format_line(p => Person.JumpCalc(p.Jump, p.Gender, p.Age) == Jump.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.JumpCalc(p.jump, p.gender, p.age) == Jump.LowMid, J.Length, out J[3]);
+                line = format_line(p => Person.JumpCalc(p.Jump, p.Gender, p.Age) == Jump.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.JumpCalc(p.jump, p.gender, p.age) == Jump.Low, J.Length, out J[4]);
+                line = format_line(p => Person.JumpCalc(p.Jump, p.Gender, p.Age) == Jump.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -564,23 +574,23 @@ namespace Health_Monitor
                 sr.Write("; Индекс Руфье");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.RoofCalc(p.oRoof, p.age) == Roof.High, J.Length, out J[0]);
+                line = format_line(p => Person.RoofCalc(p.oRoof, p.Age) == Roof.High, J.Length, out J[0]);
                 sr.Write("1; высокий; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.RoofCalc(p.oRoof, p.age) == Roof.HighMid, J.Length, out J[1]);
+                line = format_line(p => Person.RoofCalc(p.oRoof, p.Age) == Roof.HighMid, J.Length, out J[1]);
                 sr.Write("2; выше среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.RoofCalc(p.oRoof, p.age) == Roof.Middle, J.Length, out J[2]);
+                line = format_line(p => Person.RoofCalc(p.oRoof, p.Age) == Roof.Middle, J.Length, out J[2]);
                 sr.Write("3; средний; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.RoofCalc(p.oRoof, p.age) == Roof.LowMid, J.Length, out J[3]);
+                line = format_line(p => Person.RoofCalc(p.oRoof, p.Age) == Roof.LowMid, J.Length, out J[3]);
                 sr.Write("4; ниже среднего; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.RoofCalc(p.oRoof, p.age) == Roof.Low, J.Length, out J[4]);
+                line = format_line(p => Person.RoofCalc(p.oRoof, p.Age) == Roof.Low, J.Length, out J[4]);
                 sr.Write("5; низкий; " + line);
                 sr.Write(Environment.NewLine);
 
@@ -593,11 +603,11 @@ namespace Health_Monitor
                 sr.Write("; Кистевая динамометрия");
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.DynamCalc(p.dynam, p.gender, p.age) == Dynam.Satisf, J.Length, out J[0]);
+                line = format_line(p => Person.DynamCalc(p.Dynam, p.Gender, p.Age) == Dynam.Satisf, J.Length, out J[0]);
                 sr.Write("1; удовлетворительно; " + line);
                 sr.Write(Environment.NewLine);
 
-                line = format_line(p => Person.DynamCalc(p.dynam, p.gender, p.age) == Dynam.Frustr, J.Length, out J[1]);
+                line = format_line(p => Person.DynamCalc(p.Dynam, p.Gender, p.Age) == Dynam.Frustr, J.Length, out J[1]);
                 sr.Write("2; неудовлетворительно; " + line);
                 sr.Write(Environment.NewLine);
 

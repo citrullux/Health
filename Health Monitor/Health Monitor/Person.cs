@@ -27,141 +27,141 @@ namespace Health_Monitor
     {
         // Входные переменные
         public Person () {
-            name = "Иванов Иван Иванович";
-            gender = 'м';
-            age = 11;
-            diag = "Здоров";
-            volume = 2500;
-            time = 30;
-            hbf_idle = 60;
-            hbf_load = 95;
-            hbf_return = 65;
-            syst = 120;
-            dyast = 70;
-            lift = 20;
-            height = 160;
-            weight = 50;
-            circle = 82;
-            circleFull = 85;
-            flexibility = 10;
-            jump = 160;
-            dynam = 15;
+            Name = "Иванов Иван Иванович";
+            Gender = 'м';
+            Age = 11;
+            Diag = "Здоров";
+            Volume = 2500;
+            Time = 30;
+            Hbf_idle = 60;
+            Hbf_load = 95;
+            Hbf_return = 65;
+            Syst = 120;
+            Dyast = 70;
+            Lift = 20;
+            Height = 160;
+            Weight = 50;
+            Circle = 82;
+            CircleFull = 85;
+            Flexibility = 10;
+            Jump = 160;
+            Dynam = 15;
         }
 
         public Person Copy()
         {
             Person other = (Person)this.MemberwiseClone();
-            other.name = string.Copy(name);
-            other.diag = string.Copy(diag);
+            other.Name = string.Copy(Name);
+            other.Diag = string.Copy(Diag);
             return other;
         }
         [System.ComponentModel.DisplayName("ФИО")]
-        public string name { get; set; }
+        public string Name { get; set; }
         
         [System.ComponentModel.DisplayName("Пол")]
-        public char gender{get;set;}
+        public char Gender{get;set;}
         
         [System.ComponentModel.DisplayName("Возраст")]
-        public double age{get;set;}
+        public double Age{get;set;}
 
         [System.ComponentModel.DisplayName("Диагноз")]
-        public string diag { get; set; }
+        public string Diag { get; set; }
 
         [System.ComponentModel.DisplayName("ЖЁЛ")]
-        public double volume{get;set;}
+        public double Volume{get;set;}
 
         [System.ComponentModel.DisplayName("Время задержки дыхания")]
-        public double time{get;set;}
+        public double Time{get;set;}
         
         // Частота сердечных сокращений
         [System.ComponentModel.DisplayName("ЧСС покоя")]
-        public double hbf_idle{get;set;}
+        public double Hbf_idle{get;set;}
 
         [System.ComponentModel.DisplayName("ЧСС нагрузки")]
-        public double hbf_load{get;set;}
+        public double Hbf_load{get;set;}
 
         [System.ComponentModel.DisplayName("ЧСС Восстановления")]
-        public double hbf_return{get;set;} 
+        public double Hbf_return{get;set;} 
         
         // Систолическое и Дистолическое давление
         [System.ComponentModel.DisplayName("Систолическое давление")]
-        public double syst{get;set;}
+        public double Syst{get;set;}
 
         [System.ComponentModel.DisplayName("Диастолическое давление")]
-        public double dyast{get;set;}
+        public double Dyast{get;set;}
 
         [System.ComponentModel.DisplayName("Подъём туловища в сед")]
-        public double lift{get;set;}
+        public double Lift{get;set;}
         // Подъёмов тела
 
         [System.ComponentModel.DisplayName("Рост")]
-        public double height {get;set;}
+        public double Height {get;set;}
 
         [System.ComponentModel.DisplayName("Вес")]
-        public double weight {get;set;} 
+        public double Weight {get;set;} 
 
 
         // Окружность грудной клетки
         [System.ComponentModel.DisplayName("Окружность грудной клетки")]
-        public double circle { get; set; }
+        public double Circle { get; set; }
 
         [System.ComponentModel.DisplayName("Окружность грудной клетки на вдохе")]
-        public double circleFull { get; set; }
+        public double CircleFull { get; set; }
 
         [System.ComponentModel.DisplayName("Гибкость")]
-        public double flexibility{get;set;} 
+        public double Flexibility{get;set;} 
         // Гибкость
 
         [System.ComponentModel.DisplayName("Прыжок с места")]
-        public double jump{get;set;}
+        public double Jump{get;set;}
 
         [System.ComponentModel.DisplayName("Кистевая динамометрия")]
-        public double dynam{get;set;}
+        public double Dynam{get;set;}
         // Динамометрия
 
 
         [System.ComponentModel.DisplayName("Экскурсия грудной клетки")]
-        public double oExcurcion { get {return circleFull-circle ;} }
+        public double oExcurcion { get {return CircleFull-Circle ;} }
 
 
         // Рассчёт индекса Пинье
         [System.ComponentModel.DisplayName("Индекс Пинье")]
-        public double oPinj { get { return height - (weight + circle);} }
+        public double oPinj { get { return Height - (Weight + Circle);} }
 
         // Рассчёт вегетативного индекса Кердо
         [System.ComponentModel.DisplayName("Индекс Кердо")]
-        public double oKerd { get { return (1 - dyast / hbf_idle) * 100;} }
+        public double oKerd { get { return (1 - Dyast / Hbf_idle) * 100;} }
 
         // Рассчёт индекса Руфье
         [System.ComponentModel.DisplayName("Индекс Руфье")]
-        public double oRoof { get { return (hbf_idle+hbf_load+hbf_return-200)/10;} }
+        public double oRoof { get { return (Hbf_idle+Hbf_load+Hbf_return-200)/10;} }
         
         // Рассчёт индекса Шаповаловой
         [System.ComponentModel.DisplayName("Индекс Шаповалова")]
-        public double oShap { get { return 1000*weight/height*lift/60;} }
+        public double oShap { get { return 1000*Weight/Height*Lift/60;} }
         
         // Рассчёт индекса Скирбинского
         [System.ComponentModel.DisplayName("Индекс Скирбинского")]
-        public double oSkir { get { return volume*time/hbf_idle;} }
+        public double oSkir { get { return Volume*Time/Hbf_idle;} }
         
         // Рассчёт индекса функциональных изменений
         [System.ComponentModel.DisplayName("Индекс функциональных изменений")]
-        public double oFunc { get { return 0.011 * hbf_idle 
-            + 0.014 * syst + 0.008 * dyast 
-            + 0.009 * weight - 0.009 * height 
-            + 0.014 * age - 0.27;} }
+        public double oFunc { get { return 0.011 * Hbf_idle 
+            + 0.014 * Syst + 0.008 * Dyast 
+            + 0.009 * Weight - 0.009 * Height 
+            + 0.014 * Age - 0.27;} }
         
         // Тип кровообращения
         [System.ComponentModel.DisplayName("Тип кровообращения")]
-        public double oType { get { return (syst-dyast)*200/(syst-dyast)/(167.2*weight*height*0.0001);} }
+        public double oType { get { return (Syst-Dyast)*200/(Syst+Dyast)/(167.2*Weight*Height*0.0001);} }
         
         // Показатель двойного преломления
         [System.ComponentModel.DisplayName("Показатель двойного произведения")]
-        public double oSTP { get { return (hbf_idle*syst)/100;} }
+        public double oSTP { get { return (Hbf_idle*Syst)/100;} }
 
         // Рассчёт экономичности кровообращения
         [System.ComponentModel.DisplayName("Рассчёт экономичности кровообращения")]
-        public double oEcon { get { return (syst-dyast)*hbf_idle;} }
+        public double oEcon { get { return (Syst-Dyast)*Hbf_idle;} }
 
 
 
@@ -174,18 +174,18 @@ namespace Health_Monitor
             {
                 return (int)PinCalc(oPinj) 
                      + (int)ExcCalc(oExcurcion)
-                     + (int)ScirbCalc(oSkir, gender, age)
+                     + (int)ScirbCalc(oSkir, Gender, Age)
                      + (int)KerdCalc(oKerd)
                      + (int)EconCalc(oEcon)
-                     + (int)HBFCalc(hbf_idle, gender, age)
-                     + (int)STPCalc(oSTP, gender, age)
+                     + (int)HBFCalc(Hbf_idle, Gender, Age)
+                     + (int)STPCalc(oSTP, Gender, Age)
                      + (int)TypeCalc(oType)
                      + (int)FuncCalc(oFunc)
-                     + (int)FlexCalc(flexibility)
-                     + (int)ShapCalc(oShap, gender, age)
-                     + (int)JumpCalc(jump, gender, age)
-                     + (int)RoofCalc(oRoof, age)
-                     + (int)DynamCalc(dynam, gender, age);
+                     + (int)FlexCalc(Flexibility)
+                     + (int)ShapCalc(oShap, Gender, Age)
+                     + (int)JumpCalc(Jump, Gender, Age)
+                     + (int)RoofCalc(oRoof, Age)
+                     + (int)DynamCalc(Dynam, Gender, Age);
             } 
         }
 
@@ -201,7 +201,7 @@ namespace Health_Monitor
                 }
                 if (oSumm >= -13 && oSumm < 6)
                 {
-                    if (diag == "Здоров")
+                    if (Diag == "Здоров")
                     {
                         return "Занятия ФК в подготовительной группе";
                     }
@@ -209,14 +209,14 @@ namespace Health_Monitor
                 }
                 if (oSumm >= 6 && oSumm < 13)
                 {
-                    if (diag == "Здоров")
+                    if (Diag == "Здоров")
                     {
                         return "Занятия ФК в основной группе";
                     }
                     return "Занятия ФК в специальной медицинской группе.";
                 }
                 // if (oSumm >= 13)
-                if (diag == "Здоров")
+                if (Diag == "Здоров")
                 {
                     return "Занятия ФК в основной группе";
                 }
@@ -677,27 +677,27 @@ namespace Health_Monitor
                 if (gender == 'м')
                 {
                     if (pin <= 170)
-                        return Jump.Low;
+                        return Health_Monitor.Jump.Low;
                     if (pin > 170 && pin <= 187)
-                        return Jump.LowMid;
+                        return Health_Monitor.Jump.LowMid;
                     if (pin > 187 && pin <= 199)
-                        return Jump.Middle;
+                        return Health_Monitor.Jump.Middle;
                     if (pin > 199 && pin <= 209)
-                        return Jump.HighMid;
+                        return Health_Monitor.Jump.HighMid;
                     if (pin > 209)
-                        return Jump.High;
+                        return Health_Monitor.Jump.High;
                 }
 
                 if (pin <= 150)
-                    return Jump.Low;
+                    return Health_Monitor.Jump.Low;
                 if (pin > 150 && pin <= 168)
-                    return Jump.LowMid;
+                    return Health_Monitor.Jump.LowMid;
                 if (pin > 168 && pin <= 181)
-                    return Jump.Middle;
+                    return Health_Monitor.Jump.Middle;
                 if (pin > 181 && pin <= 194)
-                    return Jump.HighMid;
+                    return Health_Monitor.Jump.HighMid;
                 //if (pin > 194)
-                return Jump.High;
+                return Health_Monitor.Jump.High;
             }
 
             if (age >= 15 && age <= 18)
@@ -705,27 +705,27 @@ namespace Health_Monitor
                 if (gender == 'м')
                 {
                     if (pin <= 180)
-                        return Jump.Low;
+                        return Health_Monitor.Jump.Low;
                     if (pin > 180 && pin <= 194)
-                        return Jump.LowMid;
+                        return Health_Monitor.Jump.LowMid;
                     if (pin > 194 && pin <= 210)
-                        return Jump.Middle;
+                        return Health_Monitor.Jump.Middle;
                     if (pin > 210 && pin <= 229)
-                        return Jump.HighMid;
+                        return Health_Monitor.Jump.HighMid;
                     if (pin > 229)
-                        return Jump.High;
+                        return Health_Monitor.Jump.High;
                 }
 
                 if (pin <= 160)
-                    return Jump.Low;
+                    return Health_Monitor.Jump.Low;
                 if (pin > 160 && pin <= 169)
-                    return Jump.LowMid;
+                    return Health_Monitor.Jump.LowMid;
                 if (pin > 169 && pin <= 190)
-                    return Jump.Middle;
+                    return Health_Monitor.Jump.Middle;
                 if (pin > 190 && pin <= 209)
-                    return Jump.HighMid;
+                    return Health_Monitor.Jump.HighMid;
                 //if (pin > 209)
-                return Jump.High;
+                return Health_Monitor.Jump.High;
             }
 
             if (age >= 7 && age <= 10)
@@ -733,29 +733,29 @@ namespace Health_Monitor
                 if (gender == 'м')
                 {
                     if (pin <= 110)
-                        return Jump.Low;
+                        return Health_Monitor.Jump.Low;
                     if (pin > 110 && pin <= 124)
-                        return Jump.LowMid;
+                        return Health_Monitor.Jump.LowMid;
                     if (pin > 124 && pin <= 145)
-                        return Jump.Middle;
+                        return Health_Monitor.Jump.Middle;
                     if (pin > 145 && pin <= 164)
-                        return Jump.HighMid;
+                        return Health_Monitor.Jump.HighMid;
                     if (pin > 164)
-                        return Jump.High;
+                        return Health_Monitor.Jump.High;
                 }
 
                 if (pin <= 100)
-                    return Jump.Low;
+                    return Health_Monitor.Jump.Low;
                 if (pin > 100 && pin <= 124)
-                    return Jump.LowMid;
+                    return Health_Monitor.Jump.LowMid;
                 if (pin > 124 && pin <= 140)
-                    return Jump.Middle;
+                    return Health_Monitor.Jump.Middle;
                 if (pin > 140 && pin <= 154)
-                    return Jump.HighMid;
+                    return Health_Monitor.Jump.HighMid;
                 //if (pin > 154)
                 //return Jump.High;
             }
-            return Jump.High;
+            return Health_Monitor.Jump.High;
         }
         
         // Рассчёт диагностических коэффициэнтов
@@ -813,47 +813,47 @@ namespace Health_Monitor
                 if (gender == 'м')
                 {
                     if (pin <= 26.5)
-                        return Dynam.Frustr;
+                        return Health_Monitor.Dynam.Frustr;
                     if (pin > 26.5)
-                        return Dynam.Satisf;
+                        return Health_Monitor.Dynam.Satisf;
                 }
 
                 if (pin <= 23.5)
-                    return Dynam.Frustr;
+                    return Health_Monitor.Dynam.Frustr;
                 //if (pin > 23.5)
-                return Dynam.Satisf;
+                return Health_Monitor.Dynam.Satisf;
             }
             if (age >= 15 && age <= 18)
             {
                 if (gender == 'м')
                 {
                     if (pin <= 39.4)
-                        return Dynam.Frustr;
+                        return Health_Monitor.Dynam.Frustr;
                     if (pin > 39.4)
-                        return Dynam.Satisf;
+                        return Health_Monitor.Dynam.Satisf;
                 }
 
                 if (pin <= 28.7)
-                    return Dynam.Frustr;
+                    return Health_Monitor.Dynam.Frustr;
                 //if (pin > 28.7)
-                return Dynam.Satisf;
+                return Health_Monitor.Dynam.Satisf;
             }
             if (age >= 7 && age <= 10)
             {
                 if (gender == 'м')
                 {
                     if (pin <= 10.7)
-                        return Dynam.Frustr;
+                        return Health_Monitor.Dynam.Frustr;
                     if (pin > 10.7)
-                        return Dynam.Satisf;
+                        return Health_Monitor.Dynam.Satisf;
                 }
 
                 if (pin <= 9.9)
-                    return Dynam.Frustr;
+                    return Health_Monitor.Dynam.Frustr;
                 //if (pin > 9.9)
                 //return Dynam.Satisf;
             }
-            return Dynam.Satisf;
+            return Health_Monitor.Dynam.Satisf;
         }
 
     }

@@ -24,8 +24,8 @@ namespace Health_Monitor
         {
             if (add) { Person = new Person(); }
             save = false;
-            inFio.Text = Person.name;
-            if (Person.gender == 'м')
+            inFio.Text = Person.Name;
+            if (Person.Gender == 'м')
             {
                 inMan.Checked = true;
                 inWoman.Checked = false;
@@ -35,23 +35,23 @@ namespace Health_Monitor
                 inMan.Checked = false;
                 inWoman.Checked = true;
             }
-            inAge.Value = (Decimal)Person.age;
-            inVolume.Value = (Decimal)Person.volume;
-            inTime.Value = (Decimal)Person.time;
-            inhbf_idle.Value = (Decimal)Person.hbf_idle;
-            inHbfload.Value = (Decimal)Person.hbf_load;
-            inHbfreturn.Value = (Decimal)Person.hbf_return;
-            inSyst.Value = (Decimal)Person.syst;
-            inDyas.Value = (Decimal)Person.dyast;
-            inLift.Value = (Decimal)Person.lift;
-            inHeight.Value = (Decimal)Person.height;
-            inWeight.Value = (Decimal)Person.weight;
-            inCirc.Value = (Decimal)Person.circle;
-            inCircfull.Value = (Decimal)Person.circleFull;
-            inDyn.Value = (Decimal)Person.dynam;
-            inJump.Value = (Decimal)Person.jump;
-            inFlex.Value = (Decimal) Person.flexibility;
-            inDiag.Text = Person.diag;
+            inAge.Value = (Decimal)Person.Age;
+            inVolume.Value = (Decimal)Person.Volume;
+            inTime.Value = (Decimal)Person.Time;
+            inhbf_idle.Value = (Decimal)Person.Hbf_idle;
+            inHbfload.Value = (Decimal)Person.Hbf_load;
+            inHbfreturn.Value = (Decimal)Person.Hbf_return;
+            inSyst.Value = (Decimal)Person.Syst;
+            inDyas.Value = (Decimal)Person.Dyast;
+            inLift.Value = (Decimal)Person.Lift;
+            inHeight.Value = (Decimal)Person.Height;
+            inWeight.Value = (Decimal)Person.Weight;
+            inCirc.Value = (Decimal)Person.Circle;
+            inCircfull.Value = (Decimal)Person.CircleFull;
+            inDyn.Value = (Decimal)Person.Dynam;
+            inJump.Value = (Decimal)Person.Jump;
+            inFlex.Value = (Decimal) Person.Flexibility;
+            inDiag.Text = Person.Diag;
 
             outPinj.Text = Person.oPinj.ToString();
             outKerd.Text = Person.oKerd.ToString();
@@ -62,12 +62,12 @@ namespace Health_Monitor
             outType.Text = Person.oType.ToString();
             outSTR.Text = Person.oSTP.ToString();
             outEcon.Text = Person.oEcon.ToString();
-            outJump.Text = Person.jump.ToString();
-            outDynm.Text = Person.dynam.ToString();
+            outJump.Text = Person.Jump.ToString();
+            outDynm.Text = Person.Dynam.ToString();
 
             outEcxs.Text = Person.oExcurcion.ToString();
-            outHBF.Text = Person.hbf_idle.ToString();
-            outFlex.Text = Person.flexibility.ToString();
+            outHBF.Text = Person.Hbf_idle.ToString();
+            outFlex.Text = Person.Flexibility.ToString();
 
             outSumm.Text = Person.oSumm.ToString();
             outConc.Text = Person.oConc.ToString();
@@ -80,34 +80,34 @@ namespace Health_Monitor
 
         private void Calculate()
         {
-            Person.name = inFio.Text;
+            Person.Name = inFio.Text;
 
             if (inMan.Checked == true)
             {
-                Person.gender = 'м';
+                Person.Gender = 'м';
             }
             else
             {
-                Person.gender = 'ж';
+                Person.Gender = 'ж';
             }
 
-            Person.age = (double)inAge.Value;
-            Person.volume = (double)inVolume.Value;
-            Person.time = (double)inTime.Value;
-            Person.hbf_idle = (double)inhbf_idle.Value;
-            Person.hbf_load = (double)inHbfload.Value;
-            Person.hbf_return = (double)inHbfreturn.Value;
-            Person.syst = (double)inSyst.Value;
-            Person.dyast = (double)inDyas.Value;
-            Person.lift = (double)inLift.Value;
-            Person.height = (double)inHeight.Value;
-            Person.weight = (double)inWeight.Value;
-            Person.circle = (double)inCirc.Value;
-            Person.circleFull = (double)inCircfull.Value;
-            Person.dynam = (double)inDyn.Value;
-            Person.jump = (double)inJump.Value;
-            Person.flexibility = (double)inFlex.Value;
-            Person.diag = (string)inDiag.Text;
+            Person.Age = (double)inAge.Value;
+            Person.Volume = (double)inVolume.Value;
+            Person.Time = (double)inTime.Value;
+            Person.Hbf_idle = (double)inhbf_idle.Value;
+            Person.Hbf_load = (double)inHbfload.Value;
+            Person.Hbf_return = (double)inHbfreturn.Value;
+            Person.Syst = (double)inSyst.Value;
+            Person.Dyast = (double)inDyas.Value;
+            Person.Lift = (double)inLift.Value;
+            Person.Height = (double)inHeight.Value;
+            Person.Weight = (double)inWeight.Value;
+            Person.Circle = (double)inCirc.Value;
+            Person.CircleFull = (double)inCircfull.Value;
+            Person.Dynam = (double)inDyn.Value;
+            Person.Jump = (double)inJump.Value;
+            Person.Flexibility = (double)inFlex.Value;
+            Person.Diag = (string)inDiag.Text;
 
             outPinj.Text = Person.oPinj.ToString();
             outKerd.Text = Person.oKerd.ToString();
@@ -118,12 +118,12 @@ namespace Health_Monitor
             outType.Text = Person.oType.ToString();
             outSTR.Text = Person.oSTP.ToString();
             outEcon.Text = Person.oEcon.ToString();
-            outJump.Text = Person.jump.ToString();
-            outDynm.Text = Person.dynam.ToString();
+            outJump.Text = Person.Jump.ToString();
+            outDynm.Text = Person.Dynam.ToString();
 
             outEcxs.Text = Person.oExcurcion.ToString();
-            outHBF.Text = Person.hbf_idle.ToString();
-            outFlex.Text = Person.flexibility.ToString();
+            outHBF.Text = Person.Hbf_idle.ToString();
+            outFlex.Text = Person.Flexibility.ToString();
 
             outSumm.Text = Person.oSumm.ToString();
             outConc.Text = Person.oConc.ToString();
