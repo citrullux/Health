@@ -25,13 +25,36 @@ namespace Health_Monitor
             grid.DataSource = list;
         }
 
+        public void ControlsEnabled(bool choose)
+        {
+            if (choose)
+            {
+                btnDel.Enabled = true;
+                btnChange.Enabled = true;
+                btnExp.Enabled = true;
+            }
+            else
+            {
+                btnDel.Enabled = false;
+                btnChange.Enabled = false;
+                btnExp.Enabled = false;
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             add_dialog.add = true;
             add_dialog.ShowDialog();
             if (add_dialog.save) {
+                // При добавлении первой записи включаем кнопки возможности удаления и изменения
+                if (grid.RowCount == 0)
+                {
+                    ControlsEnabled(true);
+                }
+                // И добавляем саму запись
                 list.Add(add_dialog.Person);
             }
+            
         }
 
         private void btnExp_Click(object sender, EventArgs e)
@@ -179,7 +202,15 @@ namespace Health_Monitor
             using (StreamReader sr = new StreamReader(fname, Encoding.GetEncoding(1251)))
             {
                 string line = sr.ReadLine();
-                while((line = sr.ReadLine()) != null)
+                string[] test = line.Split(';');
+                {
+                    if (test[0]!="ФИО ")
+                    {
+                        return;
+                    }
+                }
+
+                while ((line = sr.ReadLine()) != null)
                 {
                     Person obj = new Person();
                     string[] fields = line.Split(';');
@@ -225,7 +256,7 @@ namespace Health_Monitor
             {
                 return;
             }
-            var ind = grid.CurrentRow.Index;        
+            var ind = grid.CurrentRow.Index;
             list.RemoveAt(ind);
         }
 
