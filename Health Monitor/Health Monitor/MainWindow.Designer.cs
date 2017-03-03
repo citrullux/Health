@@ -38,7 +38,6 @@
             this.btnChange = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -58,6 +57,7 @@
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(824, 425);
             this.grid.TabIndex = 0;
+            this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
             // 
             // groupBox1
             // 
@@ -69,6 +69,7 @@
             // 
             // btnTable
             // 
+            this.btnTable.Enabled = false;
             this.btnTable.Location = new System.Drawing.Point(843, 218);
             this.btnTable.Name = "btnTable";
             this.btnTable.Size = new System.Drawing.Size(153, 23);
@@ -79,6 +80,7 @@
             // 
             // btnExp
             // 
+            this.btnExp.Enabled = false;
             this.btnExp.Location = new System.Drawing.Point(6, 48);
             this.btnExp.Name = "btnExp";
             this.btnExp.Size = new System.Drawing.Size(134, 23);
@@ -109,6 +111,7 @@
             // 
             // btnDel
             // 
+            this.btnDel.Enabled = false;
             this.btnDel.Location = new System.Drawing.Point(6, 77);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(134, 23);
@@ -119,6 +122,7 @@
             // 
             // btnChange
             // 
+            this.btnChange.Enabled = false;
             this.btnChange.Location = new System.Drawing.Point(6, 48);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(134, 23);
@@ -150,23 +154,11 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Импорт/Экспорт";
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(849, 247);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 183);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "Внимание! Созданную диагностическую таблицу нельзя импортировать";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 442);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnTable);
             this.Controls.Add(this.groupBox2);
@@ -180,7 +172,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -196,6 +187,5 @@
         private System.Windows.Forms.Button btnTable;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -32,12 +32,14 @@ namespace Health_Monitor
                 btnDel.Enabled = true;
                 btnChange.Enabled = true;
                 btnExp.Enabled = true;
+                btnTable.Enabled = true;
             }
             else
             {
                 btnDel.Enabled = false;
                 btnChange.Enabled = false;
                 btnExp.Enabled = false;
+                btnTable.Enabled = false;
             }
         }
 
@@ -236,6 +238,10 @@ namespace Health_Monitor
                     list.Add(obj);
                 }
             }
+            if (grid.RowCount != 0)
+            {
+                ControlsEnabled(true);
+            }
         }
 
         private void btnChange_Click(object sender, EventArgs e)
@@ -258,6 +264,10 @@ namespace Health_Monitor
             }
             var ind = grid.CurrentRow.Index;
             list.RemoveAt(ind);
+            if (grid.RowCount == 0)
+            {
+                ControlsEnabled(false);
+            }
         }
 
         private string format_line(Func<Person, bool> predicate, int num, out double j) {
@@ -646,6 +656,23 @@ namespace Health_Monitor
                 sr.Write(Environment.NewLine);
             }
             //foreach(Person p in list)
+        }
+
+        private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (grid.RowCount == 0)
+            {
+                return;
+            }
+            var ind = grid.CurrentRow.Index;
+            add_dialog.add = false;
+            add_dialog.Person = list[ind].Copy();
+            add_dialog.ShowDialog();
+            if (add_dialog.save)
+            {
+                list[ind] = add_dialog.Person;
+            }
+
         }
     }
 }
